@@ -16,8 +16,7 @@
     <!-- Custom fonts for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @stack('css')
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
