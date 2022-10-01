@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\BannerResource;
 use App\Models\Banner;
+use App\Models\Blog;
+use App\Models\Category;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -17,7 +20,15 @@ class FrontController extends Controller
     public function index()
     {
         $banners = Banner::with(['media'])->isActive()->inRandomOrder()->limit(3)->get();
-        return view('home.landing', ['banners' => $banners]);
+        $blogs = Blog::with(['media', 'category'])->isActive()->inRandomOrder()->limit(3)->get();
+        $categories = Category::get(['name']);
+        $galleries = Gallery::with(['media', 'category'])->get();
+        return view('home.landing', [
+            'banners' => $banners,
+            'categories'    => $categories,
+            'galleries' =>  $galleries,
+            'blogs' => $blogs
+        ]);
     }
 
     public function about()
@@ -42,7 +53,10 @@ class FrontController extends Controller
 
     public function blog()
     {
-        return view('blog.flist');
+        $blogs = Blog::orderBy('created_at', 'desc')->with(['media', 'category'])->get();
+        return view('blog.flist', [
+            'blogs' =>  $blogs
+        ]);
     }
 
     public function blogDetails()

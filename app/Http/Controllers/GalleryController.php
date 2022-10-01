@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GalleryController extends Controller
 {
@@ -14,7 +16,12 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('admin.gallery.flist');
+        $categories = Category::pluck('name', 'id')->all();
+        $galleries = Gallery::with(['media'])->get();
+        return view('admin.gallery.flist', [
+            'categories'    =>  $categories,
+            'galleries' =>  $galleries
+        ]);
     }
 
     /**
@@ -35,7 +42,37 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'photos'    => ['required', 'array'],
+            'category_id'    =>  ['required'],
+            'name'  =>  ['required']
+        ]);
+
+        $galleryPaths = [];
+
+        if($request->has('photos') && $request->file('photos')){
+            foreach($request->file('photos') as $photo){
+                $name = $photo->getClientOriginalName();
+                $photoPath = $photo->storeAs('media', $name, 'public');
+                array_push($galleryPaths, $photoPath);
+            }
+        }
+
+        DB::transaction(function() use ($request, $galleryPaths){
+
+            $gallery = Gallery::create([
+                'name' =>  $request->name,
+                'category_id'   => $request->category_id,
+                'active'    =>  true
+            ]);
+
+            foreach ($galleryPaths as $key => $path) {
+                $gallery->addMedia(storage_path('app/public/'.$path))->toMediaCollection();
+                $gallery->media;
+            }
+        }); 
+        
+        return redirect()->route('galleries.index');
     }
 
     /**

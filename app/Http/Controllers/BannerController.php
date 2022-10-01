@@ -10,12 +10,12 @@ class BannerController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('guest');
+        return $this->middleware('auth');
     }
 
     public function index(Request $request)
     {
-        $banners = Banner::paginate(20);
+        $banners = Banner::with(['media'])->get();
 
         return view('admin.banner.index', ['banners' => $banners]);
     }

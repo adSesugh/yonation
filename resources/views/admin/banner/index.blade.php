@@ -33,10 +33,22 @@
                             <tr>
                                 <td class="align-middle">{{ ++$key }}</td>
                                 <td class="align-middle">
-                                    <img src="{{ $item->media[0]->original_url }}" alt="{{ $item->title }}">
+                                    <img height="50px" src="{{ $item->media[0]->original_url }}" alt="{{ $item->title }}">
                                 </td>
-                                <td class="align-middle">middle</td>
-                                <td class="align-middle">bottom</td>
+                                <td class="align-middle">
+                                    <div class="row">
+                                        <h5>{{ $item->title }}</h5>
+                                        <em class="text-italic">{{ $item->sub_title }}</em>
+                                        <p>{{ $item->description }}</p>
+                                    </div>
+                                </td>
+                                <td class="align-middle">
+                                    <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
+                                        <i class="fas fa-check" aria-hidden="true"></i>
+                                        <i class="fa-sharp fa-solid fa-rotate"></i>
+                                    </a>
+                                    <span class="btn-sm btn-primary">@if($item->active) {{ 'Published' }} @else {{ 'Unpublish' }} @endif</span>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -16,16 +16,16 @@
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/about-us') ? 'active' : '' }}" href="{{ route('about.index') }}">About Us</a>
+                    <a class="nav-link {{ Request::is('about-us') ? 'active' : '' }}" href="{{ route('about.index') }}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/jobs') ? 'active' : '' }}" href="{{ route('jobs.index') }}">Jobs</a>
+                    <a class="nav-link {{ Request::is('jobs') ? 'active' : '' }}" href="{{ route('jobs.index') }}">Jobs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/gallery') ? 'active' : '' }}" href="{{ route('gallery.index') }}">Gallery</a>
+                    <a class="nav-link {{ Request::is('gallery') ? 'active' : '' }}" href="{{ route('gallery.index') }}">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/blog') ? 'active' : '' }}" href="{{ route('blogs.index') }}">Blogs</a>
+                    <a class="nav-link {{ Request::is('blog*') ? 'active' : '' }}" href="{{ route('blog.index') }}">Blogs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact Us</a>
@@ -33,10 +33,9 @@
             </ul>
             <!--end navbar nav-->
             <div class="login-btn ms-lg-4 mt-2 mt-lg-0">
-                <button type="button" class="btn btn-primary rounded-pill btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#login">
-                    login
-                </button>
+                <a href="{{ route('login') }}" class="btn btn-primary rounded-pill btn-sm">
+                    Login
+                </a>
             </div>
         </div>
         <!--end collapse-->

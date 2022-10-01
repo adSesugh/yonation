@@ -327,14 +327,10 @@
                     <div class="filters-group-wrap">
                         <div class="filters-group">
                             <ul class="nav filter-options list-unstyled list-inline justify-content-center">
-                                <li data-group="all" class="active nav-link list-inline-item" style="cursor: pointer;">
-                                    Show All</li>
-                                <li data-group="branding" class="nav-link list-inline-item" style="cursor: pointer;">
-                                    Branding</li>
-                                <li data-group="marketing" class="nav-link list-inline-item" style="cursor: pointer;">
-                                    Marketing</li>
-                                <li data-group="consulting" class="nav-link list-inline-item" style="cursor: pointer;">
-                                    Consulting</li>
+                                <li data-group="all" class="active nav-link list-inline-item" style="cursor: pointer;">Show All</li>
+                                @foreach ($categories as $item)
+                                    <li data-group="{{ Str::lower(Str::slug($item->name)) }}" class="nav-link list-inline-item" style="cursor: pointer;">{{ $item->name }}</li>
+                                @endforeach
                             </ul>
                             <!--end portfolio-list-->
                         </div>
@@ -347,174 +343,31 @@
         <!--end container-->
         <div class="container-fluid px-0 mt-5">
             <div class="row g-0" id="grid">
-                <div class="col-md-3 picture-item" data-groups='["branding"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="images/01.jpg" alt="01" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="images/01.jpg" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
+                @foreach ($galleries as $item)
+                    @foreach ($item->media as $photo)
+                        <div class="col-md-3 picture-item" data-groups='["{{ Str::lower(Str::slug($item->category->name)) }}"]'>
+                            <div class="card portfolio overflow-hidden">
+                                <div>
+                                    <img src="{{ $photo->original_url }}" height="150" width="100%" alt="01" class="img-fluid" />
+                                    <div class="portfolio-overlay"></div>
+                                    <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
+                                        <a href="{{ $photo->original_url }}" class="lightbox">
+                                            <i class="mdi mdi-plus text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content p-3">
+                                    <a href="#">
+                                        <h5 class="text-white mb-0">{{ $item->name }}</h5>
+                                    </a>
+                                    <p class="text-white mb-0">{{ $item->category->name }}</p>
+                                </div>
                             </div>
+                            <!--end portfolio-->
                         </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Branding</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
-                <div class="col-md-3 picture-item" data-groups='["marketing"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/02.jpg') }}" alt="02" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/02.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Marketing</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
-                <div class="col-md-3 picture-item" data-groups='["consulting"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/03.jpg') }}" alt="03" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/03.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Consulting</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end-col-->
-                <div class="col-md-3 picture-item" data-groups='["marketing"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/04.jpg') }}" alt="04" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/04.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Marketing</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
-                <div class="col-md-3 picture-item" data-groups='["branding"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/05.jpg') }}" alt="05" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/05.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Branding</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
-                <div class="col-md-3 picture-item" data-groups='["consulting"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/06.jpg') }}" alt="06" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/06.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Consulting</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
-                <div class="col-md-3 picture-item" data-groups='["marketing"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/07.jpg') }}" alt="07" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/07.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Marketing</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
-                <div class="col-md-3 picture-item" data-groups='["branding"]'>
-                    <div class="card portfolio overflow-hidden">
-                        <div>
-                            <img src="{{ asset('images/08.jpg') }}" alt="08" class="img-fluid" />
-                            <div class="portfolio-overlay"></div>
-                            <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
-                                <a href="{{ asset('images/08.jpg') }}" class="lightbox">
-                                    <i class="mdi mdi-plus text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-content p-3">
-                            <a href="#">
-                                <h5 class="text-white mb-0">Project Title</h5>
-                            </a>
-                            <p class="text-white mb-0">Branding</p>
-                        </div>
-                    </div>
-                    <!--end portfolio-->
-                </div>
-                <!--end col-->
+                        <!--end col-->
+                    @endforeach
+                @endforeach
             </div>
             <!--end row-->
         </div>
@@ -648,85 +501,37 @@
             </div>
             <!--end row-->
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/01.jpg" alt="01" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Business</span>
+                @foreach ($blogs as $item)
+                    <div class="col-lg-4">
+                        <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
+                            @if(count($item->media) > 0)
+                                <img src="{{ $item->media[0]->original_url }}" alt="01" style="height: 250px;" class="img-fluid rounded-top" />
+                            @else
+                                <img src="images/01.jpg" alt="01" style="height: 250px;" class="img-fluid rounded-top" />
+                            @endif
+                            <div class="position-absolute p-3">
+                                <span class="badge bg-primary f-12 fw-normal">{{ $item->category->name }}</span>
+                            </div>
+                            <div class="blog-content card-body mt-2">
+                                <small class="f-12 float-end">{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</small>
+                                <ul class="list-inline text-muted f-12">
+                                    <li class="list-inline-item">{{ \Carbon\Carbon::parse($item->created_at)->format('F j, Y') }}</li>
+                                    {{-- <li class="list-inline-item"><i class="fas fa-eye" aria-hidden="true"></i> 500</li>
+                                    <li class="list-inline-item"><i class="fas fa-comments-o" aria-hidden="true"> 116</i> --}}
+                                    </li>
+                                </ul>
+                                <a href="{{ route('blogs.show', $item->slug) }}">
+                                    <h5>{{ $item->title }}</h5>
+                                </a>
+                                <p class="text-muted">{{ Str::limit($item->description, 120)}}</p>
+                                <a href="{{ route('blogs.show', $item->slug) }}">Read More <span class="ps-1">&#8594;</span></a>
+                            </div>
+                            <!--end blog-content-->
                         </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">04 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
+                        <!--end blog-->
                     </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/02.jpg" alt="02" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Business</span>
-                            <span class="badge bg-success f-12 fw-normal">Marketing</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">10 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/03.jpg" alt="03" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Consulting</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">10 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
+                    <!--end col-->
+                @endforeach
             </div>
             <!--end row-->
         </div>
@@ -772,7 +577,7 @@
                                     <div class="col">
                                         <p class="text-muted">
                                             <span class="text-dark f-19"><i class="mdi mdi-email"></i></span>
-                                            example@design.com
+                                            aesesugh@gmail.com
                                         </p>
                                     </div>
                                     <div class="col">

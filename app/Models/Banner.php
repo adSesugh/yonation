@@ -24,12 +24,4 @@ class Banner extends Model implements HasMedia
     {
         return $query->where('active', true);
     }
-
-    // public function registerMediaConversions(Media $media = null): void
-    // {
-    //     $this
-    //         ->addMediaConversion('preview')
-    //         ->fit(Manipulations::FIT_CROP, 300, 300)
-    //         ->nonQueued();
-    // }
 }

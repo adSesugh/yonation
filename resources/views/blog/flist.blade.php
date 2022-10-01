@@ -19,164 +19,37 @@
             </div>
             <!--end row-->
             <div class="row">
-                <div class="col-lg-4 mb-2">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/01.jpg" alt="01" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Business</span>
+                @foreach ($blogs as $item)
+                    <div class="col-lg-4 mb-2">
+                        <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
+                            @if(count($item->media) > 0)
+                                <img src="{{ $item->media[0]->original_url }}" alt="01" style="height: 250px;" class="img-fluid rounded-top" />
+                            @else
+                                <img src="images/01.jpg" alt="01" style="height: 250px;" class="img-fluid rounded-top" />
+                            @endif
+                            <div class="position-absolute p-3">
+                                <span class="badge bg-primary f-12 fw-normal">{{ $item->category->name }}</span>
+                            </div>
+                            <div class="blog-content card-body mt-2">
+                                <small class="f-12 float-end">{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</small>
+                                <ul class="list-inline text-muted f-12">
+                                    <li class="list-inline-item">{{ \Carbon\Carbon::parse($item->created_at)->format('F j, Y') }}</li>
+                                    {{-- <li class="list-inline-item"><i class="fas fa-eye" aria-hidden="true"></i> 500</li>
+                                    <li class="list-inline-item"><i class="fas fa-comments-o" aria-hidden="true"> 116</i> --}}
+                                    </li>
+                                </ul>
+                                <a href="{{ route('blogs.show', $item->slug) }}">
+                                    <h5>{{ $item->title }}</h5>
+                                </a>
+                                <p class="text-muted">{{ Str::limit($item->description, 120)}}</p>
+                                <a href="{{ route('blogs.show', $item->slug) }}">Read More <span class="ps-1">&#8594;</span></a>
+                            </div>
+                            <!--end blog-content-->
                         </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">04 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="{{ route('blogs.detail') }}">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
+                        <!--end blog-->
                     </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 mb-2">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/02.jpg" alt="02" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Business</span>
-                            <span class="badge bg-success f-12 fw-normal">Marketing</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">10 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 mb-2">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/03.jpg" alt="03" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Consulting</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">10 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 mb-2">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/01.jpg" alt="01" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Business</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">04 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 mb-2">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/02.jpg" alt="02" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Business</span>
-                            <span class="badge bg-success f-12 fw-normal">Marketing</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">10 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 mb-2">
-                    <div class="card blog border-0 rounded-3 mt-4 mt-lg-0">
-                        <img src="images/03.jpg" alt="03" class="img-fluid rounded-top" />
-                        <div class="position-absolute p-3">
-                            <span class="badge bg-primary f-12 fw-normal">Consulting</span>
-                        </div>
-                        <div class="blog-content card-body mt-2">
-                            <small class="f-12 float-end">10 min</small>
-                            <ul class="list-inline text-muted f-12">
-                                <li class="list-inline-item">March 25, 2022</li>
-                                <li class="list-inline-item"><i class="fa fa-eye" aria-hidden="true"></i> 500</li>
-                                <li class="list-inline-item"><i class="fa fa-comments-o" aria-hidden="true"> 116</i>
-                                </li>
-                            </ul>
-                            <a href="#">
-                                <h5>The growing technology Initiate Excellent Profit</h5>
-                            </a>
-                            <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting...
-                            </p>
-                            <a href="#">Read More <span class="ps-1">&#8594;</span></a>
-                        </div>
-                        <!--end blog-content-->
-                    </div>
-                    <!--end blog-->
-                </div>
-                <!--end col-->
+                    <!--end col-->
+                @endforeach
             </div>
             <!--end row-->
         </div>

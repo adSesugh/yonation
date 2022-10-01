@@ -15,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('dashboard') }}">
+        <a class="nav-link" href="{{ route('home') }}">
             <i class="fas fa-laptop" aria-hidden="true"></i>
             <span>Dashboard</span></a>
     </li>

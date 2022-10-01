@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin.blog.flist');
+        $blogs = Blog::orderBy('created_at', 'desc')->with(['media', 'category'])->get();
+        return view('admin.blog.flist', [
+            'blogs' =>  $blogs
+        ]);
     }
 
     /**
@@ -24,7 +34,10 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::pluck('name', 'id')->all();
+        return view('admin.blog.create', [
+            'categories'    =>  $categories
+        ]);
     }
 
     /**
@@ -35,7 +48,36 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'category_id' => ['required'],
+            'description'   => ['required']
+        ]);
+
+        $photoPath = null;
+
+        if($request->has('photo') && $request->file('photo')){
+            $photo = $request->file('photo');
+            $photoName = $photo->getClientOriginalName();
+            $photoPath = $request->file('photo')->storeAs('media', $photoName, 'public');
+        }
+
+        DB::transaction(function() use ($request, $photoPath){
+
+            $blog = Blog::create([
+                'title' =>  $request->title,
+                'category_id'   => $request->category_id,
+                'description'   => $request->description,
+                'active'    => true
+            ]);
+    
+            if(!is_null($photoPath)){
+                $blog->addMedia(storage_path('app/public/'.$photoPath))->toMediaCollection();
+                $blog->media;
+            }
+        }); 
+        
+        return redirect()->route('blogs.index');
     }
 
     /**

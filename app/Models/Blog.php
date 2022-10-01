@@ -34,4 +34,14 @@ class Blog extends Model implements HasMedia
             $model->slug = Str::slug($model->title);
         });
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function scopeIsActive($query)
+    {
+        return $query->where('active', true);
+    }
 }
