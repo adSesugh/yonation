@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    @include('home.slider')
+    @include('home.slider', $banners)
     <!--START ABOUT US-->
     <section class="section">
         <div class="container">

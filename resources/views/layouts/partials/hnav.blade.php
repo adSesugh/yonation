@@ -3,7 +3,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}">
             <img src="images/ynlogo.png" alt="logo" height="48" class="logo-light" />
-            <img src="images/ynlogo.png" alt="logo" height="48" class="logo-dark" />
+            <img src="images/ynlogo-normal.png" alt="logo" height="48" class="logo-dark" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('course')->nullable();
             $table->foreignId('degree_id')->nullable();
             $table->string('slug', 191);
+            $table->boolean('treated')->default(false);
             $table->timestamps();
         });
     }

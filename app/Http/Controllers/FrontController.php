@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\BannerResource;
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class FrontController extends Controller
 {
@@ -14,8 +16,7 @@ class FrontController extends Controller
 
     public function index()
     {
-        $banners = Banner::with(['media'])->inRandomOrder()->limit(3)->get(['title', 'sub_title', 'description']);
-
+        $banners = Banner::with(['media'])->isActive()->inRandomOrder()->limit(3)->get();
         return view('home.landing', ['banners' => $banners]);
     }
 
@@ -47,5 +48,10 @@ class FrontController extends Controller
     public function blogDetails()
     {
         return view('blog.fdetail');
+    }
+
+    public function admin()
+    {
+        return view('admin.dashboard');
     }
 }

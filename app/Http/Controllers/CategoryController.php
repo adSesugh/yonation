@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        return view('admin.category.index', [
+            'categories'    =>  $categories,
+            'flag'  => true
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        abort(403);
     }
 
     /**
@@ -35,7 +39,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'  => ['required', 'unique:categories']
+        ]);
+
+        Category::create($request->all());
+
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -46,7 +56,7 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
-        //
+        abort(403);
     }
 
     /**
@@ -55,9 +65,14 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(Category $category)
     {
-        //
+        $categories = Category::orderBy('created_at', 'desc')->get();
+        return view('admin.category.index', [
+            'categories'    =>  $categories,
+            'category'  => $category,
+            'flag'  => false
+        ]);
     }
 
     /**
@@ -67,9 +82,15 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => ['required']
+        ]);
+
+        $category->update($request->all());
+
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -80,6 +101,6 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        abort(403);
     }
 }

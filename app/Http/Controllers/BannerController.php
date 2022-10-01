@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BannerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-        //
+        return $this->middleware('guest');
+    }
+
+    public function index(Request $request)
+    {
+        $banners = Banner::paginate(20);
+
+        return view('admin.banner.index', ['banners' => $banners]);
     }
 
     /**
@@ -24,7 +27,7 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.banner.create');
     }
 
     /**
@@ -35,7 +38,36 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'sub_title' => ['required'],
+            'description'   => ['required']
+        ]);
+
+        $bannerPath = null;
+
+        if($request->has('banner') && $request->file('banner')){
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+            $bannerPath = $request->file('banner')->storeAs('media', $bannerName, 'public');
+        }
+
+        DB::transaction(function() use ($request, $bannerPath){
+
+            $bannery = Banner::create([
+                'title' =>  $request->title,
+                'sub_title'   => $request->sub_title,
+                'description'   => $request->description,
+                'active'    => true
+            ]);
+    
+            if(!is_null($bannerPath)){
+                $bannery->addMedia(storage_path('app/public/'.$bannerPath))->toMediaCollection();
+                $bannery->media;
+            }
+        }); 
+        
+        return redirect()->route('banners.index');
     }
 
     /**
@@ -46,7 +78,7 @@ class BannerController extends Controller
      */
     public function show(Banner $banner)
     {
-        //
+        abort(403);
     }
 
     /**
@@ -80,6 +112,6 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
-        //
+        abort(403);
     }
 }

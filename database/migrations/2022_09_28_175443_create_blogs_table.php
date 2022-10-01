@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->foreignId('user_id');
             $table->string('slug', 191);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
