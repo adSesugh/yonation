@@ -13,7 +13,7 @@
                         <div class="col mr-4">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Applications</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $resumeCount }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-file fa-2x text-gray-300"></i>
@@ -30,7 +30,7 @@
                     <div class="row no-gutters align-items-center px-2">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Processed</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">15,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $resumeProcessed }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-file fa-2x text-gray-300"></i>
@@ -47,7 +47,7 @@
                     <div class="row no-gutters align-items-center px-2">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pending</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">25,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $resumePending }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-file fa-2x text-gray-300"></i>
@@ -64,7 +64,7 @@
                     <div class="row no-gutters align-items-center px-2">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Job Bank</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $jobCount }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-briefcase fa-2x text-gray-300"></i>
@@ -88,7 +88,13 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                   
+                    @foreach ($jobs as $item)
+                        <div class="row mb-2 card">
+                            <h5>{{ $item->title }}</h5>
+                            <em>{{ $item->domain->name }}</em>
+                            <p>{{ Str::limit($item->description, 100) }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

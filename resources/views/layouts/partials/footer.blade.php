@@ -5,7 +5,7 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="footer-info text-center text-md-start">
                     <a href="#">
-                        <img src="images/ynlogo.png" alt="logo" height="100">
+                        <img src="{{ asset('images/ynlogo.png') }}" alt="logo" height="100">
                     </a>
                     <p class="text-white-50 mt-4">Praesent consectetur posuere bibendum. Pellentesque ac malesuada
                         arcu. Quisque vehicula nisi tristique tempus lacinia.</p>

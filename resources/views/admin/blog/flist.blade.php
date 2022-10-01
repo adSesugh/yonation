@@ -41,7 +41,9 @@
                                 </td>
                                 <td class="align-middle">
                                     <div class="row">
-                                        <h5>{{ $item->title }}</h5>
+                                        <a href="{{ route('blogs.show', $item->slug) }}">
+                                            <h5>{{ $item->title }}</h5>
+                                        </a>
                                         <em class="text-italic">{{ $item->category->name }}</em>
                                         <p>{{ $item->description }}</p>
                                     </div>

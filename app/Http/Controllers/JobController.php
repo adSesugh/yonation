@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Domain;
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class JobController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,10 @@ class JobController extends Controller
      */
     public function index()
     {
-        return view('admin.job.flist');
+        $jobs = Job::orderBy('created_at', 'desc')->with(['domain'])->get();
+        return view('admin.job.flist', [
+            'jobs' =>  $jobs
+        ]);
     }
 
     /**
@@ -24,7 +34,12 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::pluck('name', 'id')->all();
+        $domains = Domain::pluck('name', 'id')->all();
+        return view('admin.job.create', [
+            'categories'    =>  $categories,
+            'domains'   =>  $domains
+        ]);
     }
 
     /**
@@ -35,7 +50,21 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'domain_id' => ['required'],
+            'description'   => ['required']
+        ]);
+
+        Job::create([
+            'title' => $request->title,
+            'domain_id' =>  $request->domain_id,
+            'description'   =>  $request->description,
+            'active' => true, 
+            'category_id' => 1
+        ]);
+
+        return redirect()->route('jobbank.index');
     }
 
     /**

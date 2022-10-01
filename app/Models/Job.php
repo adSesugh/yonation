@@ -13,6 +13,7 @@ class Job extends Model
     protected $fillable = [
         'title',
         'category_id',
+        'domain_id',
         'description',
         'slug'
     ];
@@ -33,5 +34,15 @@ class Job extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function domain()
+    {
+        return $this->belongsTo(Domain::class);
+    }
+
+    public function scopeIsActive($query)
+    {
+        return $query->where('active', true);
     }
 }

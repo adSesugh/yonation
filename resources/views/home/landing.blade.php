@@ -211,96 +211,20 @@
             </div>
             <!--end row-->
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/branding.svg') }}" alt="branding" height="60" />
-                        </div>
-                        <div class="bg-feature-icon position-absolute">
-                            <img src="{{ asset('images/branding.svg') }}" alt="branding" height="130" />
-                        </div>
-                        <h5 class="mt-4">Branding</h5>
-                        <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum since.</p>
+                @foreach ($jobs as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <a href="{{ route('job.detail', $item->slug) }}">
+                            <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
+                                <div class="bg-feature-icon position-absolute">
+                                    <img src="{{ asset('images/consultation.svg') }}" alt="branding" height="130" />
+                                </div>
+                                <h6 class="mt-4">{{ $item->domain->name }}</h6>
+                                <p class="mt-3 text-muted">{{ $item->title }}</p>
+                            </div>
+                        </a>
+                        <!--end feature-box-->
                     </div>
-                    <!--end feature-box-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/growth.svg') }}" alt="growth" height="60" />
-                        </div>
-                        <div class="bg-feature-icon position-absolute">
-                            <img src="{{ asset('images/growth.svg') }}" alt="growth" height="130" />
-                        </div>
-                        <h5 class="mt-4">Marketing Growthing</h5>
-                        <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum since.</p>
-                    </div>
-                    <!--end feature-box-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/strategy.svg') }}" alt="strategy" height="60" />
-                        </div>
-                        <div class="bg-feature-icon position-absolute">
-                            <img src="{{ asset('images/strategy.svg') }}" alt="strategy" height="130" />
-                        </div>
-                        <h5 class="mt-3">Strategy</h5>
-                        <p class="mt-4 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum since.</p>
-                    </div>
-                    <!--end feature-box-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/consultation.svg') }}" alt="consultation" height="60" />
-                        </div>
-                        <div class="bg-feature-icon position-absolute">
-                            <img src="{{ asset('images/consultation.svg') }}" alt="consultation" height="130" />
-                        </div>
-                        <h5 class="mt-4">Business Consulting</h5>
-                        <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum since.</p>
-                    </div>
-                    <!--end feature-box-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/technology.svg') }}" alt="technology" height="60" />
-                        </div>
-                        <div class="bg-feature-icon position-absolute">
-                            <img src="{{ asset('images/technology.svg') }}" alt="technology" height="130" />
-                        </div>
-                        <h5 class="mt-4">Technology</h5>
-                        <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum since.</p>
-                    </div>
-                    <!--end feature-box-->
-                </div>
-                <!--end col-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card feature-box border-0 overflow-hidden mt-3 mt-lg-0">
-                        <div class="feature-icon">
-                            <img src="{{ asset('images/idea.svg') }}" alt="idea" height="60" />
-                        </div>
-                        <div class="bg-feature-icon position-absolute">
-                            <img src="{{ asset('images/idea.svg') }}" alt="idea" height="130" />
-                        </div>
-                        <h5 class="mt-4">Bussiness idea</h5>
-                        <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry Lorem Ipsum since.</p>
-                    </div>
-                    <!--end feature-box-->
-                </div>
-                <!--end col-->
+                @endforeach
             </div>
             <!--end row-->
         </div>

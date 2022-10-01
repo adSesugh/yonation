@@ -27,8 +27,9 @@ Route::get('/', [FrontController::class, 'index'])->name('index');
 Route::get('/about-us', [FrontController::class, 'about'])->name('about.index');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery.index');
 Route::get('/jobs', [FrontController::class, 'jobs'])->name('jobs.index');
+Route::get('/job/{slug}', [FrontController::class, 'jobDetails'])->name('job.detail');
 Route::get('/blog', [FrontController::class, 'blog'])->name('blog.index');
-Route::get('/blog/{slug}', [FrontController::class, 'jobDetails'])->name('blog.detail');
+Route::get('/blog/{slug}', [FrontController::class, 'blogDetails'])->name('blog.detail');
 
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
@@ -38,7 +39,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::resource('/galleries', GalleryController::class)->except(['destroy', 'show', 'create', 'edit']);
     Route::get('/resumes', [ResumeController::class, 'index'])->name('resumes.index');
-    Route::get('/jobbank', [JobController::class, 'index'])->name('jobbank.index');
+    Route::resource('/jobbank', JobController::class);
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::resource('/users', UserController::class);
 });

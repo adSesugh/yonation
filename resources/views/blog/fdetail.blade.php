@@ -1,6 +1,6 @@
 @extends('layouts.guest')
 
-@section('title') title @stop
+@section('title') {{ $detail->title }} @stop
 
 @section('content')
     @include('layouts.partials.breadcrumb')

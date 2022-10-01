@@ -56,4 +56,14 @@ class Resume extends Model implements HasMedia
     {
         return $this->belongsTo(Degree::class);
     }
+
+    public function scopeIsProcessed($query)
+    {
+        return $query->where('treated', true);
+    }
+
+    public function scopeIsPending($query)
+    {
+        return $query->where('treated', false);
+    }
 }

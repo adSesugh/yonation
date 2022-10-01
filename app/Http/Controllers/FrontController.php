@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\BannerResource;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Gallery;
+use App\Models\Job;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class FrontController extends Controller
 {
@@ -23,11 +22,13 @@ class FrontController extends Controller
         $blogs = Blog::with(['media', 'category'])->isActive()->inRandomOrder()->limit(3)->get();
         $categories = Category::get(['name']);
         $galleries = Gallery::with(['media', 'category'])->get();
+        $jobs = Job::orderBy('created_at', 'desc')->limit(6)->inRandomOrder()->with(['domain'])->get();
         return view('home.landing', [
             'banners' => $banners,
             'categories'    => $categories,
             'galleries' =>  $galleries,
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'jobs'  => $jobs
         ]);
     }
 
@@ -43,12 +44,25 @@ class FrontController extends Controller
 
     public function jobs()
     {
-        return view('job.flist');
+        $jobs = Job::orderBy('created_at', 'desc')->with(['domain'])->get();
+        $blogs = Blog::orderBy('created_at', 'desc')->with(['media', 'category'])->get();
+        
+        return view('job.flist', [
+            'jobs' =>  $jobs,
+            'blogs' =>  $blogs
+        ]);
     }
 
-    public function jobDetails()
+    public function jobDetails($slug)
     {
-        return view('job.fdetail');
+        $detail = Job::where('slug', $slug)->first();
+        $relatedJobs = Job::where('domain_id', $detail->domain_id)->isActive()->get();
+        $blogs = Blog::latest()->limit(5)->inRandomOrder()->get();
+        return view('job.fdetail', [
+            'detail'    =>  $detail,
+            'relatedJobs'   =>  $relatedJobs,
+            'blogs' =>  $blogs
+        ]);
     }
 
     public function blog()
@@ -59,9 +73,16 @@ class FrontController extends Controller
         ]);
     }
 
-    public function blogDetails()
+    public function blogDetails($slug)
     {
-        return view('blog.fdetail');
+        $jobs = Job::latest()->limit(5)->isActive()->get();
+        $detail = Blog::where('slug', $slug)->first();
+        $relatedBlogs = Blog::where('category_id', $detail->category_id)->isActive()->get();
+        return view('blog.fdetail', [
+            'detail'    =>  $detail,
+            'relatedBlogs'   =>  $relatedBlogs,
+            'jobs' =>  $jobs
+        ]);
     }
 
     public function admin()
