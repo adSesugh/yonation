@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 50)->index()->nullable();
             $table->string('sub_title', 100);
-            $table->string('description', 150);
+            $table->text('description');
             $table->boolean('active')->default(false);
             $table->timestamps();
         });
