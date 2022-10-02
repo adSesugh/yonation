@@ -24,4 +24,12 @@ class Banner extends Model implements HasMedia
     {
         return $query->where('active', true);
     }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+              ->width(1086)
+              ->height(900)
+              ->sharpen(10);
+    }
 }

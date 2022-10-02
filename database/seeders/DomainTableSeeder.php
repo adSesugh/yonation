@@ -16,6 +16,8 @@ class DomainTableSeeder extends Seeder
      */
     public function run()
     {
+        Domain::truncate();
+        
         $data = [
             'Accounting, Auditing & Finance',
             'Admin & Office',

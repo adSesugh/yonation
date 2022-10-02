@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        User::factory(1)->create();
+        //User::factory(1)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(DomainTableSeeder::class); 
+        $this->call(DegreeTableSeeder::class);
     }
 }

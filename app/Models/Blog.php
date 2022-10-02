@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Support\Str;
 
 class Blog extends Model implements HasMedia
@@ -43,5 +44,13 @@ class Blog extends Model implements HasMedia
     public function scopeIsActive($query)
     {
         return $query->where('active', true);
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+              ->width(1086)
+              ->height(900)
+              ->sharpen(10);
     }
 }
