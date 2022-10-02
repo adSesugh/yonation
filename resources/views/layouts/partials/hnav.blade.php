@@ -19,9 +19,6 @@
                     <a class="nav-link {{ Request::is('about-us') ? 'active' : '' }}" href="{{ route('about.index') }}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('jobs') ? 'active' : '' }}" href="{{ route('jobs.index') }}">Jobs</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link {{ Request::is('gallery') ? 'active' : '' }}" href="{{ route('gallery.index') }}">Gallery</a>
                 </li>
                 <li class="nav-item">
@@ -33,8 +30,8 @@
             </ul>
             <!--end navbar nav-->
             <div class="login-btn ms-lg-4 mt-2 mt-lg-0">
-                <a href="{{ route('login') }}" class="btn btn-primary rounded-pill btn-sm">
-                    Login
+                <a href="{{ route('register') }}" class="btn btn-primary rounded-pill btn-sm">
+                    Register
                 </a>
             </div>
         </div>

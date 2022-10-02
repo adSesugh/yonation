@@ -194,7 +194,7 @@
     <!--end section-->
     <!--END ABOUT US-->
 
-    <!--START JOBS-->
+    {{-- <!--START JOBS-->
     <section class="section bg-light" id="job">
         <div class="container">
             <div class="row justify-content-center">
@@ -231,7 +231,7 @@
         <!--end container-->
     </section>
     <!--end section-->
-    <!--END JOBS-->
+    <!--END JOBS--> --}}
 
     <!--START GALLERY-->
     <section class="section pb-0" id="gallery">
