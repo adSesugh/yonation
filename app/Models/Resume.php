@@ -23,7 +23,8 @@ class Resume extends Model implements HasMedia
         'birthdate',
         'domain',
         'school_name',
-        'year_attended',
+        'year_from',
+        'year_to',
         'course',
         'degree_id',
         'slug'

@@ -24,7 +24,6 @@ return new class extends Migration
             $table->date('birthdate')->nullable();
             $table->foreignId('domain');
             $table->string('school_name')->index();
-            $table->string('year_attended');
             $table->string('course')->nullable();
             $table->foreignId('degree_id')->nullable();
             $table->string('slug', 191);
