@@ -58,21 +58,24 @@
                             <div class="row align-items-center">
                                 <div class="col-md-5">
                                     <div class="history-img text-lg-end text-center mb-4 mb-lg-0">
-                                        <img src="images/history.jpg" alt="history" class="img-fluid rounded-circle" />
+                                        <img src="images/history.jpeg" style="height: 450px;width: 450px;" alt="history" class="img-fluid rounded-circle" />
                                     </div>
                                 </div>
                                 <!--end col-->
                                 <div class="col-md-7">
                                     <div class="card border-0 p-3 ms-lg-4">
                                         <h4 class="about-title">History</h4>
-                                        <p class="mt-4 pt-3 text-muted mb-2"><em>Lorem Ipsum has been the industry's
-                                                standard dummy text ever make a type since the 1500s.</em></p>
-                                        <p class="text-muted">
-                                            When an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen book. Lorem Ipsum has been the industry's standard dummy text
-                                            ever since unknown printer took a galley of
-                                            type and it to make a type specimen book.
+                                        <p class="mt-4 pt-3 text-muted mb-2">
+                                            <em>
+                                                The history of the Yoruba people begins in Ile-Ife(Ife Empire). This kingdom was founded by the deity Oduduwa, who is believed to have created the world. Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth.[    The Ethnic group became popular internationally due to their trading with the Portuguese 
+                                            The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. 
+They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking,
+ and ivory and wood carving.
+                                            </em>
                                         </p>
+                                        {{-- <p class="text-muted">
+                                            
+                                        </p> --}}
                                         <div class="d-flex">
                                             <div class="about-social">
                                                 <a href="#" class="text-primary">

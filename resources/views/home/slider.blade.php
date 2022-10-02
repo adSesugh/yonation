@@ -12,7 +12,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-lg-8">
                                             <div class="hero-content text-center text-white">
-                                                <p class="hero-sub f-24 mb-0">{{ $item->title }}</p>
+                                                <p class="hero-sub f-24 mb-0">{{ Str::upper($item->title) }}</p>
                                                 <h1 class="hero-heading display-4 text-capitalize mt-3 font-weight-500">{{ $item->sub_title }}</h1>
                                                 <p class="text-white-50 mt-4">{{ $item->description }}</p>
                                                 <div class="mt-4 pt-2">
@@ -40,7 +40,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="hero-content text-center text-white">
-                                            <p class="hero-sub f-24 mb-0">Business</p>
+                                            <p class="hero-sub f-24 mb-0 text-capitalize">{{ Str::lower('business app') }}</p>
                                             <h1 class="hero-heading display-4 text-capitalize mt-3 font-weight-500">best
                                                 business planing</h1>
                                             <p class="text-white-50 mt-4">
