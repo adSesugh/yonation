@@ -15,8 +15,7 @@
                         <h6 class="text-primary text-uppercase mb-0">About Us</h6>
                         <h3 class="title-heading">We'r a dynamic team of creatives people innovation</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted pt-3 mx-md-5">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                        <p class="text-muted pt-3 mx-md-5">YORUBA PEOPLE FIRST Building a universal community of united Yoruba descendants for Yorubaland’s development.</p>
                     </div>
                     <!--end about-title-->
                 </div>
@@ -67,15 +66,12 @@
                                         <h4 class="about-title">History</h4>
                                         <p class="mt-4 pt-3 text-muted mb-2">
                                             <em>
-                                                The history of the Yoruba people begins in Ile-Ife(Ife Empire). This kingdom was founded by the deity Oduduwa, who is believed to have created the world. Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth.[    The Ethnic group became popular internationally due to their trading with the Portuguese 
-                                            The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. 
-They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking,
- and ivory and wood carving.
+                                                The history of the Yoruba people begins in Ile-Ife(Ife Empire).
                                             </em>
                                         </p>
-                                        {{-- <p class="text-muted">
-                                            
-                                        </p> --}}
+                                        <p class="text-muted">
+                                            {{ Str::limit('This kingdom was founded by the deity Oduduwa, who is believed to have created the world. Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth. The Ethnic group became popular internationally due to their trading with the Portuguese. The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking, and ivory and wood carving.', 259) }}
+                                        </p>
                                         <div class="d-flex">
                                             <div class="about-social">
                                                 <a href="#" class="text-primary">
@@ -90,7 +86,7 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
                                             </div>
                                         </div>
                                         <div class="mt-3">
-                                            <a href="#" class="text-primary">Learn More <span
+                                            <a href="{{ route('about.index') }}" class="text-primary">Learn More <span
                                                     class="f-20">&#8594;</span></a>
                                         </div>
                                     </div>
@@ -105,15 +101,15 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
                                 <div class="col-md-7">
                                     <div class="card border-0 p-3 me-lg-4">
                                         <h4 class="about-title">Vision</h4>
-                                        <p class="mt-4 pt-3 text-muted mb-2"><em>Lorem Ipsum has been the industry's
-                                                standard dummy text ever make a type since the 1500s.</em></p>
-                                        <p class="text-muted">
-                                            When an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen book. Lorem Ipsum has been the industry's standard dummy text
-                                            ever since unknown printer took a galley of
-                                            type and it to make a type specimen book.
+                                        <p class="mt-4 pt-3 text-muted mb-2">
+                                            <em>
+                                                Discover and invest in developmental research aimed at helping Yorubas in Yorubaland
+                                            </em>
                                         </p>
-                                        <a href="#" class="text-primary">Learn More <span
+                                        <p class="text-muted">
+                                            Discover and invest in developmental research Invest in healthcare, education, children’s education, youth development, and rural development aimed at helping Yorubas in Yorubaland
+                                        </p>
+                                        <a href="{{ route('about.index') }}" class="text-primary">Learn More <span
                                                 class="f-20">&#8594;</span></a>
                                     </div>
                                     <!--end card-->
@@ -141,17 +137,6 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
                                 <div class="col-md-7">
                                     <div class="card border-0 p-3 ms-lg-4">
                                         <h4 class="mb-4 pb-2 about-title">Our Mission</h4>
-                                        <div class="mission-box mt-3">
-                                            <div class="d-flex align-items-center">
-                                                <i class="mdi mdi-eye mission-icon" aria-hidden="true"></i>
-                                                <div class="ms-3">
-                                                    <h5 class="mb-0">Vision</h5>
-                                                    <p class="text-muted mb-0">Lorem Ipsum is text printing and
-                                                        typesetting.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end mission-box-->
                                         <div class="mission-box ms-lg-4">
                                             <div class="d-flex align-items-center">
                                                 <div class="mission-icon">
@@ -159,21 +144,9 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
                                                 </div>
                                                 <div class="ms-3">
                                                     <h5 class="mb-0">Mission</h5>
-                                                    <p class="text-muted mb-0">Lorem Ipsum is text printing and
-                                                        typesetting.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end mission-box-->
-                                        <div class="mission-box">
-                                            <div class="d-flex align-items-center">
-                                                <div class="mission-icon">
-                                                    <i class="mdi mdi-bullseye" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <h5 class="mb-0">Goal</h5>
-                                                    <p class="text-muted mb-0">Lorem Ipsum is text printing and
-                                                        typesetting.</p>
+                                                    <p class="text-muted mb-0">
+                                                        Our mission is to organize information and make it  accessible and Committed to significantly improving the lives of  many people as possible.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -237,16 +210,14 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
     <!--END JOBS--> --}}
 
     <!--START GALLERY-->
-    <section class="section pb-0" id="gallery">
+    <section class="section pb-0 bg-blog bg-light" id="gallery">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="text-center mb-5">
+                    <div class="text-center mb-2">
                         <h6 class="text-primary mb-0">Our Gallery</h6>
                         <h3 class="title-heading">Awesome Work</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted mt-3 mx-md-5">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard.</p>
                     </div>
                 </div>
                 <!--end col-->
@@ -308,12 +279,10 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="text-center mb-5">
+                    <div class="text-center mb-2">
                         <h6 class="text-uppercase text-primary mb-0">Process</h6>
                         <h3 class="text-capitalize title-heading">our business work Process</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted mt-3 mx-md-5">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard.</p>
                     </div>
                 </div>
                 <!--end col-->
@@ -371,7 +340,7 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
     <!--END PROCESS-->
 
      <!--START CLIENT-LOGO -->
-     <section class="pb-5">
+     {{-- <section class="pb-5">
         <div class="container">
             <div class="row row-cols-lg-5 row-cols-md-3 row-cols-1 justify-content-center">
                 <div class="col">
@@ -408,7 +377,7 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
             <!--end row-->
         </div>
         <!--end container-->
-    </section>
+    </section> --}}
     <!--END CLIENT-LOGO -->
 
     <!--START BLOG-->
@@ -416,12 +385,10 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="text-center mb-5">
+                    <div class="text-center mb-2">
                         <h6 class="text-primary mb-0">Our Blog</h6>
                         <h3 class="title-heading text-capitalize">Read Our Latest News</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted mt-3 mx-md-5">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard.</p>
                     </div>
                 </div>
                 <!--end col-->
@@ -472,12 +439,10 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    <div class="text-center mb-5">
+                    <div class="text-center mb-2">
                         <h6 class="text-primary text-uppercase mb-0">Contact</h6>
                         <h3 class="text-capitalize">Let's talk about everything!</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted mt-3 mx-md-5">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard.</p>
                     </div>
                 </div>
             </div>
@@ -486,8 +451,7 @@ They worked at such trades as blacksmithing, weaving, leatherworking, glassmakin
                     <div class="contact">
                         <div class="text-center text-lg-start">
                             <h5 class="title-heading">Contact Information:</h5>
-                            <p class="text-muted mt-4">It is a long established fact that a reader will be distracted by
-                                the readable content of a page when looking at its layout.</p>
+                            <p class="text-muted mt-4">We will like to hear from you. Please contact us using the provided channels</p>
                             <div class="contact-details mt-4 text-start">
                                 <div class="row row-cols-lg-1 row-cols-md-2 row-cols-1">
                                     <div class="col">
