@@ -119,20 +119,29 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" name="domain_id" id="domain_id" placeholder="Job Function">
+                            <input type="text" class="form-control form-control-user" name="school_name" id="school_name" placeholder="School Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-user" name="course" id="course" placeholder="Course Completed">
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="password" class="form-control form-control-user"
-                                    id="exampleInputPassword" placeholder="Password">
+                                <input type="text" class="form-control form-control-user" name="year_from" id="year_from" placeholder="Attended From Date">
                             </div>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control form-control-user"
-                                    id="exampleRepeatPassword" placeholder="Repeat Password">
+                                {!! Form::text('year_to', null, ["class" => "form-control form-control-user", 'placeholder' => 'Attended To Date']) !!}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="file" class="form-control form-control-user" name="photo" id="photo" placeholder="Photo">
+                            </div>
+                            <div class="col-sm-6">
+                                {!! Form::file('resumecv', null, ["class" => "form-control form-control-user", 'placeholder' => 'CV']) !!}
                             </div>
                         </div>
                         <a href="login.html" class="btn btn-primary btn-user btn-block">
-                            Register Account
+                            Submit Resume
                         </a>
                     {!! Form::close() !!}
                 </div>
