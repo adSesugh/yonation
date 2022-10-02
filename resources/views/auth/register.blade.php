@@ -84,7 +84,7 @@
             <div class="col-lg-7">
                 <div class="p-5">
                     <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4">Submit Resume!</h1>
+                        <h1 class="h4 text-gray-900 mb-4">Fill your Information!</h1>
                     </div>
                     {!! Form::open(['class' => 'user']) !!}
                         @csrf
@@ -141,7 +141,7 @@
                             </div>
                         </div>
                         <a href="login.html" class="btn btn-primary btn-user btn-block">
-                            Submit Resume
+                            Submit
                         </a>
                     {!! Form::close() !!}
                 </div>
