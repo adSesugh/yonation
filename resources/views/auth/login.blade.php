@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('title') Login @stop
+
 @section('content')
 <div class="row justify-content-center mt-4">
     <div class="col-xl-10 col-lg-12 col-md-9 mt-4">
@@ -59,10 +61,10 @@
                                 </button>
                                 <hr>
                             </form>
-                            <hr>
+                            {{-- <hr>
                             <div class="text-center">
                                 <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

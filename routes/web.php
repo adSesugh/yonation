@@ -31,6 +31,9 @@ Route::get('/job/{slug}', [FrontController::class, 'jobDetails'])->name('job.det
 Route::get('/blog', [FrontController::class, 'blog'])->name('blog.index');
 Route::get('/blog/{slug}', [FrontController::class, 'blogDetails'])->name('blog.detail');
 
+Route::get('/user-data', [FrontController::class, 'jobApply'])->name('job.apply');
+Route::post('/user-data', [FrontController::class, 'jobApplyStore'])->name('job.applyStore');
+
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
     Route::resource('/banners', BannerController::class);
@@ -44,4 +47,16 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/users', UserController::class);
 });
 
-Auth::routes();
+Route::match(['get', 'post'], 'register', function(){
+    return redirect('/');
+});
+
+Route::match(['get', 'post'], 'reset', function(){
+    return redirect('/');
+});
+
+Route::match(['get', 'post'], 'verify', function(){
+    return redirect('/');
+});
+
+Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);

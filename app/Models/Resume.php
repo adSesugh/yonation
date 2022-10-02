@@ -21,7 +21,7 @@ class Resume extends Model implements HasMedia
         'mobile_no',
         'gender',
         'birthdate',
-        'domain',
+        'domain_id',
         'school_name',
         'year_from',
         'year_to',

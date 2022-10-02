@@ -104,11 +104,25 @@
                 <!-- Card Header - Dropdown -->
                 <div
                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Recent Applications</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">5 Most Recent Applications</h6>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
-                    
+                <div class="">
+                    @forelse ($recentResumes as $item)
+                        <div class="card mb-2 border-left-primary">
+                            <div class="px-2">
+                                <span class="">{{ $item->fullname }}</span>
+                                <em>{{ $item->email }}</em><br>
+                                <span class="badge badge-primary">{{ $item->domain->name }}</span>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="card mb-4 border-left-primary">
+                            <div class="card-body">
+                                <h6>No Application yet</h6>
+                            </div>
+                        </div>
+                    @endforelse
                 </div>
             </div>
         </div>

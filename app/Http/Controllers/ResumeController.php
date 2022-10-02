@@ -14,7 +14,10 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        return view('admin.resume.flist');
+        $resumes = Resume::orderBy('created_at', 'desc')->with(['media', 'domain', 'degree'])->get();
+        return view('admin.resume.flist', [
+            'resumes'   =>  $resumes
+        ]);
     }
 
     /**
