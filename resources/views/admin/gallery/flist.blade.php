@@ -3,54 +3,50 @@
 @section('title') Galleries @stop
 
 @section('content')
-    <div class="row">
-        {!! Form::open(['route' => ['galleries.store'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-            @csrf
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card position-relative">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Gallery</h6>
-                            </div>
-                            <div class="card-body" >
-                                <input required type="file" id="gallery-photo-add" multiple name="photos[]" maxlength="16" accept="image/*" />
-                                <div id="gallery" class="gallery"></div>
-                            </div>
-                        </div>
-        
+    {!! Form::open(['route' => ['galleries.store'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+        @csrf
+        <div class="row" >
+            <div class="col-lg-6">
+                <div class="card position-relative">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Gallery</h6>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="card position-relative">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Other Details</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label for="title" class="form-label">Name</label>
-                                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Gallery Name' ]) !!}
-                                </div>
-                                <div class="mb-3">
-                                    <label for="subtitle" class="form-label">Category</label>
-                                    {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-body" >
+                        <input required type="file" id="gallery-photo-add" multiple name="photos[]" maxlength="16" accept="image/*" />
+                        <div id="gallery" class="gallery"></div>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-lg-12 text-right">
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card position-relative">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Other Details</h6>
+                    </div>
+                    <div class="card-body">
                         <div class="mb-3">
-                            <button class="btn btn-sm btn-primary" type="submit">
-                                <i class="fas fa-save" aria-hidden="true"></i>
-                                Save Banner
-                            </button>
+                            <label for="title" class="form-label">Name</label>
+                            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Gallery Name' ]) !!}
+                        </div>
+                        <div class="mb-3">
+                            <label for="subtitle" class="form-label">Category</label>
+                            {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
                 </div>
             </div>
-        {!! Form::close() !!}
-    </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-12 text-right">
+                <div class="mb-3">
+                    <button class="btn btn-sm btn-primary" type="submit">
+                        <i class="fas fa-save" aria-hidden="true"></i>
+                        Save Banner
+                    </button>
+                </div>
+            </div>
+        </div>
+    {!! Form::close() !!}
     <div class="row mt-2">
         <div class="card">
             <div class="card-header">
