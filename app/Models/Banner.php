@@ -28,8 +28,8 @@ class Banner extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-              ->width(1086)
-              ->height(900)
+              ->width(2000)
+              ->height(1333)
               ->sharpen(10);
     }
 }

@@ -21,8 +21,8 @@ class Settings extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-              ->width(1086)
-              ->height(900)
+              ->width(500)
+              ->height(500)
               ->sharpen(10);
     }
 }
