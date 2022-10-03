@@ -89,7 +89,7 @@
                                         <div class="col-lg-8">
                                             <h5>{{ $item->title }}</h5>
                                             <span>{{ $item->category->name }}</span>
-                                            <span>{{ Str::limit($item->description, 65) }}</span>
+                                            <span>{{ Str::limit($item->description, 55) }}</span>
                                         </div>
                                     </div>
                                 </a>
