@@ -453,8 +453,18 @@
                             <h5 class="title-heading">Contact Information:</h5>
                             <p class="text-muted mt-4">We will like to hear from you. Please contact us using the provided channels</p>
                             <div class="contact-details mt-4 text-start">
+                                <div class="row row-cols-lg-1 row-cols-md-2 row-cols-1">
+                                    <div class="col">
+                                        <p class="text-muted">
+                                            <span class="text-dark f-19"><i class="mdi mdi-email"></i></span>
+                                            info@iretiodoyoruba.org
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <ul class="footer-social list-inline list-unstyled mt-3 justify-content-start">
-                                    <li class="social-link ms-0 list-inline-item">
+                                    <li class="social-link ms-0 list-inline-item" style="color: chartreuse">
                                         <a href="#">
                                             <i class="mdi mdi-facebook"></i>
                                         </a>
@@ -479,30 +489,6 @@
                                     </li>
                                     <!--end social-link-->
                                 </ul>
-                                <div class="row row-cols-lg-1 row-cols-md-2 row-cols-1">
-                                    {{-- <div class="col">
-                                        <p class="text-muted">
-                                            <span class="text-dark f-19"><i class="mdi mdi-map-marker"></i></span> 756
-                                            Forest St. Fullerton, CA 92831
-                                        </p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="text-muted">
-                                            <span class="text-dark f-19"><i class="mdi mdi-phone"></i></span> +234 706 347 9563
-                                        </p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="text-muted">
-                                            <span class="text-dark f-19"><i class="mdi mdi-email"></i></span>
-                                            aesesugh@gmail.com
-                                        </p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="text-muted">
-                                            <span class="text-dark f-19"><i class="mdi mdi-fax"></i></span> +234 802 747 9193
-                                        </p>
-                                    </div> --}}
-                                </div>
                             </div>
                         </div>
                     </div>
