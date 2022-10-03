@@ -10,6 +10,18 @@
         <div class="card-body">
             <div class="row no-gutters">
                 <div class="col-lg-4">
+                    <div class="row">
+                        @if(count($resume->media) > 0)
+                            <img src="{{ $resume->media[0]->original_url }}" style="height: 350px;" alt="{{ $resume->fullname }}">
+                        @else
+                            <div class="row">
+                                <div class="col-lg-12 text-justify-center text-center">
+                                    <h5 class="text-center mt-4">No Passport</h5>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                    <hr>
                     @if(isset($resume->code))
                         <div class="form-group">
                             <label for="">Application</label>
@@ -103,16 +115,6 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="card">
-                        @if(count($resume->media) > 0)
-                            <img src="{{ $resume->media[0]->original_url }}" style="height: 350px;" alt="{{ $resume->fullname }}">
-                        @else
-                            <div class="row">
-                                <div class="col-lg-12 text-justify-center text-center">
-                                    <h5 class="text-center mt-4">No Passport</h5>
-                                </div>
-                            </div>
-                        @endif
-                        <hr>
                         @if(count($resume->media) > 0)
                             <iframe src="https://docs.google.com/gview?url={{ $resume->media[1]->original_url }}&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
                         @else
