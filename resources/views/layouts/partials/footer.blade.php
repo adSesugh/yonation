@@ -116,7 +116,7 @@
             <div class="col-lg-12">
                 <div class="text-center">
                     <p class="text-white-50 mb-0" style="font-size: 12px">
-                        <script>document.write(new Date().getFullYear())</script> &copy; Yoruba Nation Designed By
+                        <script>document.write(new Date().getFullYear())</script> &copy; Yoruba Nation
                         <i class="mdi mdi-heart text-danger"></i>
                         {{-- <a class="text-white-50" href="#"><small>KeennessSolutions</small></a> --}}
                     </p>
