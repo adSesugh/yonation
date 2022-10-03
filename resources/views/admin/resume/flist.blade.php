@@ -69,7 +69,7 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'fullname', 'render': function(data, type, row, meta){
-                        return `<a href="/resumes/${row.slug}" target="_blank">${data}</a>`
+                        return `<a href="/resumes/${row.slug}">${data}</a>`
                     }},
                     {data: 'email', name: 'email'},
                     {data: 'degree.name', name: 'degree.name'},

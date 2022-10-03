@@ -43,7 +43,7 @@
                     @if(isset($resume->birthdate))
                         <div class="form-group">
                             <label for="" style="font-weight: 700">Birth Date:</label>
-                            <span>{{ \Carbon\Carbon::parse($resume->birthdate)->diffForHumans() }}</span>
+                            <span>{{ \Carbon\Carbon::parse($resume->birthdate)->format('d M, Y') }}</span>
                         </div>
                     @endif
                     <hr>
