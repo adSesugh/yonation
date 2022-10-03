@@ -296,8 +296,8 @@
                             <p class="mb-0">1</p>
                         </div>
                         <div class="card-body mt-3">
-                            <h5>Idea</h5>
-                            <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the industry Lorem Ipsum.</p>
+                            <h5>Job Opening</h5>
+                            <p class="mt-3 text-muted">On-site</p>
                         </div>
                     </div>
                     <!--end process-box-->
@@ -310,8 +310,8 @@
                             <p class="mb-0">2</p>
                         </div>
                         <div class="card-body mt-3">
-                            <h5>Marketing</h5>
-                            <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the industry Lorem Ipsum.</p>
+                            <h5>Interview</h5>
+                            <p class="mt-3 text-muted">Hiring</p>
                         </div>
                     </div>
                     <!--end process-box-->
@@ -324,8 +324,8 @@
                             <p class="mb-0">3</p>
                         </div>
                         <div class="card-body mt-3">
-                            <h5>Growth</h5>
-                            <p class="mt-3 text-muted">Lorem Ipsum is simply dummy text of the industry Lorem Ipsum.</p>
+                            <h5>On-boarding</h5>
+                            {{-- <p class="mt-3 text-muted">Hiring</p> --}}
                         </div>
                     </div>
                     <!--end process-box-->
@@ -453,8 +453,34 @@
                             <h5 class="title-heading">Contact Information:</h5>
                             <p class="text-muted mt-4">We will like to hear from you. Please contact us using the provided channels</p>
                             <div class="contact-details mt-4 text-start">
+                                <ul class="footer-social list-inline list-unstyled mt-3 justify-content-start">
+                                    <li class="social-link ms-0 list-inline-item">
+                                        <a href="#">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <!--end social-link-->
+                                    <li class="social-link list-inline-item">
+                                        <a href="#">
+                                            <i class="mdi mdi-whatsapp"></i>
+                                        </a>
+                                    </li>
+                                    <!--end social-link-->
+                                    <li class="social-link list-inline-item">
+                                        <a href="#">
+                                            <i class="mdi mdi-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <!--end social-link-->
+                                    <li class="social-link list-inline-item">
+                                        <a href="#">
+                                            <i class="mdi mdi-skype"></i>
+                                        </a>
+                                    </li>
+                                    <!--end social-link-->
+                                </ul>
                                 <div class="row row-cols-lg-1 row-cols-md-2 row-cols-1">
-                                    <div class="col">
+                                    {{-- <div class="col">
                                         <p class="text-muted">
                                             <span class="text-dark f-19"><i class="mdi mdi-map-marker"></i></span> 756
                                             Forest St. Fullerton, CA 92831
@@ -475,7 +501,7 @@
                                         <p class="text-muted">
                                             <span class="text-dark f-19"><i class="mdi mdi-fax"></i></span> +234 802 747 9193
                                         </p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
