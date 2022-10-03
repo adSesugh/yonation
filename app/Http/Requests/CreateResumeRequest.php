@@ -28,6 +28,16 @@ class CreateResumeRequest extends FormRequest
             'email' =>  ['required', 'email', 'unique:resumes'],
             'phone' =>  ['required', 'max:15', 'unique:resumes'],
             'mobile_no' =>  ['required', 'max:15', 'unique:resumes'],
+            'gender'    =>  ['required'],
+            'birthdate' =>  ['required'],
+            'domain_id' =>  ['required'],
+            'degree_id' =>  ['required'],
+            'year_from' =>  ['required'],
+            'year_to'   =>  ['required'],
+            'course'    =>  ['required'],
+            'school_name'   =>  ['required'],
+            'photo' =>  ['required'],
+            'resumecv'  => ['required']
         ];
     }
 
@@ -37,7 +47,11 @@ class CreateResumeRequest extends FormRequest
             'mobile_no.required'    =>  'Mobile Number required',
             'mobile_no.max' =>  "Mobile Number can't exceed 15 digits",
             'mobile_no.unique'  =>  'Already registered',
-            'fullname.required' =>  'Full Name is required'
+            'fullname.required' =>  'Full Name is required',
+            'birthdate' =>  'Birth Date field is required',
+            'resumecv.required' =>  'Please upload CV',
+            'domain_id.required' =>  'Select a job function',
+            'degree_id.required' =>  'Select your qualification',
         ];
     }
 }
