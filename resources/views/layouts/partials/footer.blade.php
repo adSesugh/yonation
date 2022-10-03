@@ -77,7 +77,7 @@
             <!--end col-->
             <div class="col-lg-5 col-6">
                 <div class="footer-nav mt-4 mt-lg-2">
-                    <h6 class="text-uppercase">Latest news</h6>
+                    <h6 class="text-uppercase">Latest Blogs</h6>
                     <ul class="list-unstyled mt-3">
                         @forelse (getBlogs() as $item)
                             <li class="footer-item">
