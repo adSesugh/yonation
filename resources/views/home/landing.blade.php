@@ -462,37 +462,36 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <ul class="footer-social list-inline list-unstyled mt-3 justify-content-start">
-                                    <li class="social-link ms-0 list-inline-item" style="color: chartreuse">
-                                        <a href="#">
-                                            <i class="mdi mdi-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <!--end social-link-->
-                                    <li class="social-link list-inline-item">
-                                        <a href="#">
-                                            <i class="mdi mdi-whatsapp"></i>
-                                        </a>
-                                    </li>
-                                    <!--end social-link-->
-                                    <li class="social-link list-inline-item">
-                                        <a href="#">
-                                            <i class="mdi mdi-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <!--end social-link-->
-                                    <li class="social-link list-inline-item">
-                                        <a href="#">
-                                            <i class="mdi mdi-skype"></i>
-                                        </a>
-                                    </li>
-                                    <!--end social-link-->
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <!--end contact-->
+                    <div class="d-flex ">
+                        <div class="about-social" style="padding-right: 0.3em">
+                            <a href="#" class="text-primary">
+                                <i class="mdi mdi-facebook f-24"></i>
+                            </a>
+                        </div>
+                        <div class="about-social mx-1">
+                            <a href="#" class="text-primary f-24">
+                                <i class="mdi mdi-google"></i> 
+                            </a>
+                        </div>
+                        <div class="about-social mx-1">
+                            <a href="#" class="text-primary f-24">
+                                <i class="mdi mdi-instagram"></i> 
+                            </a>
+                        </div>
+                        <div class="about-social mx-1">
+                            <a href="#" class="text-primary f-24">
+                                <i class="mdi mdi-twitter"></i> 
+                            </a>
+                        </div>
+                        <div class="about-social mx-1">
+                            <a href="#" class="text-primary f-24">
+                                <i class="mdi mdi-linkedin"></i> 
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <!--edn col-->
                 <div class="col-lg-7">
