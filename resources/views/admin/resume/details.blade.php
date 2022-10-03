@@ -114,7 +114,7 @@
                         @endif
                         <hr>
                         @if(count($resume->media) > 0)
-                            <iframe src="{{ $resume->media[1]->original_url }}&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
+                            <iframe src="https://docs.google.com/gview?url={{ $resume->media[1]->original_url }}&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
                         @else
                             <div class="row">
                                 <div class="col-lg-12 text-justify-center text-center">
