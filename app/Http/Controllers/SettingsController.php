@@ -14,7 +14,10 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        return view('admin.setting');
+        $settings = Settings::pluck('value')->all();
+        return view('admin.setting', [
+            'settings'  =>  $settings
+        ]);
     }
 
     /**
@@ -35,7 +38,18 @@ class SettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request->all() as $key => $value) {
+            if($key !== '_token'){
+                Settings::where('key', $key)->update([
+                    'value' =>  $value
+                ]);
+            }
+            else {
+                continue;
+            }
+        }
+
+        return redirect()->route('settings.index');
     }
 
     /**

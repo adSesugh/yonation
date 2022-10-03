@@ -7,32 +7,43 @@
                     <a href="#">
                         <img src="{{ asset('images/ynlogo.png') }}" alt="logo" height="100">
                     </a>
-                    <p class="text-white-50 mt-4">Praesent consectetur posuere bibendum. Pellentesque ac malesuada
-                        arcu. Quisque vehicula nisi tristique tempus lacinia.</p>
+                    <p class="text-white-50 mt-4">YORUBA PEOPLE FIRST Building a universal community of united Yoruba descendants for Yorubaland’s development.</p>
                     <ul class="footer-social list-inline list-unstyled mt-3 justify-content-start">
-                        <li class="social-link ms-0 list-inline-item">
-                            <a href="#">
-                                <i class="mdi mdi-facebook"></i>
-                            </a>
-                        </li>
+                        @if(!is_null(getSetting('fb_url')))
+                            <li class="social-link ms-0 list-inline-item">
+                                <a href="{{ getSetting('fb_url') }}">
+                                    <i class="mdi mdi-facebook"></i>
+                                </a>
+                            </li>
+                        @endif
                         <!--end social-link-->
-                        <li class="social-link list-inline-item">
+                        {{-- <li class="social-link list-inline-item">
                             <a href="#">
                                 <i class="mdi mdi-whatsapp"></i>
                             </a>
-                        </li>
+                        </li> --}}
                         <!--end social-link-->
-                        <li class="social-link list-inline-item">
-                            <a href="#">
-                                <i class="mdi mdi-twitter"></i>
-                            </a>
-                        </li>
-                        <!--end social-link-->
-                        <li class="social-link list-inline-item">
-                            <a href="#">
-                                <i class="mdi mdi-skype"></i>
-                            </a>
-                        </li>
+                        @if(!is_null(getSetting('twt_url')))
+                            <li class="social-link list-inline-item">
+                                <a href="{{ getSetting('twt_url') }}">
+                                    <i class="mdi mdi-twitter"></i>
+                                </a>
+                            </li>
+                        @endif
+                        @if(!is_null(getSetting('insta_url')))
+                            <li class="social-link list-inline-item">
+                                <a href="{{ getSetting('insta_url') }}">
+                                    <i class="mdi mdi-instagram"></i>
+                                </a>
+                            </li>
+                        @endif
+                        @if(!is_null(getSetting('linkedin_url')))
+                            <li class="social-link list-inline-item">
+                                <a href="{{ getSetting('linkedin_url') }}">
+                                    <i class="mdi mdi-linkedin"></i>
+                                </a>
+                            </li>
+                        @endif
                         <!--end social-link-->
                     </ul>
                     <!--end footer-social-->

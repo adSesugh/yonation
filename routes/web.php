@@ -43,10 +43,11 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::resource('/galleries', GalleryController::class)->except(['destroy', 'show', 'create', 'edit']);
     Route::resource('/resumes', ResumeController::class);
+    Route::post('search_applicant', [ResumeController::class, 'searchApplicant'])->name('applicant.search');
     Route::get('getResumes', [ResumeController::class, 'getResumes'])->name('resumes.list');
     Route::resource('/jobbank', JobController::class);
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
-    Route::post('/settings', [SettingsController::class, 'postSettings'])->name('settings.post');
+    Route::post('/settings', [SettingsController::class, 'store'])->name('settings.store');
     Route::resource('/users', UserController::class);
 });
 

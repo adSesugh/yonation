@@ -13,7 +13,7 @@
                 <div class="col-lg-8">
                     <div class="about-title text-center mb-5">
                         <h6 class="text-primary text-uppercase mb-0">About Us</h6>
-                        <h3 class="title-heading">We'r a dynamic team of creatives people innovation</h3>
+                        <h3 class="title-heading f-14">We'r a dynamic team of creatives people innovation</h3>
                         <div class="title-border"></div>
                         <p class="text-muted pt-3 mx-md-5">YORUBA PEOPLE FIRST Building a universal community of united Yoruba descendants for Yorubaland’s development.</p>
                     </div>
@@ -466,31 +466,34 @@
                     </div>
                     <!--end contact-->
                     <div class="d-flex ">
-                        <div class="about-social" style="padding-right: 0.3em">
-                            <a href="#" class="text-primary">
-                                <i class="mdi mdi-facebook f-24"></i>
-                            </a>
-                        </div>
-                        <div class="about-social mx-1">
-                            <a href="#" class="text-primary f-24">
-                                <i class="mdi mdi-google"></i> 
-                            </a>
-                        </div>
-                        <div class="about-social mx-1">
-                            <a href="#" class="text-primary f-24">
-                                <i class="mdi mdi-instagram"></i> 
-                            </a>
-                        </div>
-                        <div class="about-social mx-1">
-                            <a href="#" class="text-primary f-24">
-                                <i class="mdi mdi-twitter"></i> 
-                            </a>
-                        </div>
-                        <div class="about-social mx-1">
-                            <a href="#" class="text-primary f-24">
-                                <i class="mdi mdi-linkedin"></i> 
-                            </a>
-                        </div>
+                        @if(!is_null(getSetting('fb_url')))
+                            <div class="about-social" style="padding-right: 0.3em">
+                                <a href="{{ getSetting('fb_url') }}" class="text-primary">
+                                    <i class="mdi mdi-facebook f-24"></i>
+                                </a>
+                            </div>
+                        @endif
+                        @if(!is_null(getSetting('twt_url')))
+                            <div class="about-social mx-1">
+                                <a href="{{ getSetting('twt_url') }}" class="text-primary f-24">
+                                    <i class="mdi mdi-twitter"></i> 
+                                </a>
+                            </div>
+                        @endif
+                        @if(!is_null(getSetting('insta_url')))
+                            <div class="about-social mx-1">
+                                <a href="{{ getSetting('insta_url') }}" class="text-primary f-24">
+                                    <i class="mdi mdi-instagram"></i> 
+                                </a>
+                            </div>
+                        @endif
+                        @if(!is_null(getSetting('linkedin_url')))
+                            <div class="about-social mx-1">
+                                <a href="{{ getSetting('linkedin_url') }}" class="text-primary f-24">
+                                    <i class="mdi mdi-linkedin"></i> 
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <!--edn col-->

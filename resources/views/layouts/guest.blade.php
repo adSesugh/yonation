@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title') | {{ config('app.name', 'Yoruba Nation') }}</title>
+    <title>@yield('title') | {{ getSetting('app_name') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="KeennessSolutions" name="Agbadu Sesugh" />
 

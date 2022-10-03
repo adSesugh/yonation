@@ -38,7 +38,7 @@
             <!--end row-->
         </div>
         <!--end container-->
-        <div class="container-fluid px-0 mt-5">
+        <div class="container-fluid px-0 mt-5 mx-4 mb-4">
             <div class="row g-0" id="grid">
                 <div class="col-md-3 picture-item" data-groups='["branding"]'>
                     <div class="card portfolio overflow-hidden">

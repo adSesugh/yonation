@@ -19,6 +19,11 @@
             <i class="fas fa-laptop" aria-hidden="true"></i>
             <span>Dashboard</span></a>
     </li>
+    <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('users.index') }}">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span>Messages</span></a>
+    </li>
     <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('categories.index') }}">
             <i class="fa fa-object-group" aria-hidden="true"></i>
@@ -54,11 +59,11 @@
             <i class="fa fa-cogs" aria-hidden="true"></i>
             <span>Settings</span></a>
     </li>
-    <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+    {{-- <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('users.index') }}">
             <i class="fa fa-users" aria-hidden="true"></i>
             <span>Users</span></a>
-    </li>
+    </li> --}}
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

@@ -37,4 +37,15 @@ class ResumeController extends Controller
             'resume'    =>  $resume
         ]);
     }
+
+    public function searchApplicant(Request $request)
+    {
+        $applicant = Resume::with(['media', 'domain', 'degree', 'job'])->where('phone', 'like', '%'.request()->q.'%')->orWhere('mobile_no', 'like', '%'.request()->q.'%')->first();
+        
+        if(!is_null($applicant) || !empty($applicant)){
+            return redirect()->route('resumes.show', $applicant->slug);
+        }
+
+        return redirect()->back();
+    }
 }
