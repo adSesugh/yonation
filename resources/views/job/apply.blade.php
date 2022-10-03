@@ -70,11 +70,11 @@
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="photo">Passport upload</label>
-                                    <input type="file" class="form-control" name="photo" id="photo" placeholder="Photo">
+                                    <input accept="image/jpeg,image/png,image/jpg" type="file" class="form-control" name="photo" id="photo" placeholder="Photo">
                                 </div>
                                 <div class="col-sm-6 align-middle">
                                     <label for="resume">Resume/CV upload</label>
-                                    <input type="file" class="form-control" name="resumecv" id="resumecv" placeholder="Resume CV upload">
+                                    <input accept=".doc,.pdf,.docx" type="file" class="form-control" name="resumecv" id="resumecv" placeholder="Resume CV upload">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">
