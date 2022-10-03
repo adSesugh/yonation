@@ -10,7 +10,7 @@
                     Category List
                 </div>
                 <div class="card-body">
-                    <table class="table table-auto" id="categories">
+                    <table class="table table-auto display" id="categories">
                         <thead>
                             <tr>
                                 <th>s/N</th>

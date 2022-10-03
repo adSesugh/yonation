@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Resume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Yajra\DataTables\DataTables;
 
 class ResumeController extends Controller
 {
@@ -14,75 +16,14 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        $resumes = Resume::orderBy('created_at', 'desc')->with(['media', 'domain', 'degree'])->get();
-        return view('admin.resume.flist', [
-            'resumes'   =>  $resumes
-        ]);
+        return view('admin.resume.flist');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function getResumes(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Resume  $resume
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Resume $resume)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Resume  $resume
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Resume $resume)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Resume  $resume
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Resume $resume)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Resume  $resume
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Resume $resume)
-    {
-        //
+        if ($request->ajax()) {
+            $resumes = Resume::orderBy('created_at', 'desc')->with(['degree', 'domain']);
+            return DataTables::of($resumes)->toJson();
+        }
     }
 }

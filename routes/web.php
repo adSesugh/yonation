@@ -41,7 +41,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/blogs', BlogController::class);
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::resource('/galleries', GalleryController::class)->except(['destroy', 'show', 'create', 'edit']);
-    Route::get('/resumes', [ResumeController::class, 'index'])->name('resumes.index');
+    Route::resource('/resumes', ResumeController::class);
+    Route::get('getResumes', [ResumeController::class, 'getResumes'])->name('resumes.list');
     Route::resource('/jobbank', JobController::class);
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::resource('/users', UserController::class);

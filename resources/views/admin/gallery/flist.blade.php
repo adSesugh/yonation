@@ -47,21 +47,19 @@
             </div>
         </div>
     {!! Form::close() !!}
-    <div class="row mt-2">
-        <div class="card">
-            <div class="card-header">
-                Gallery List
-            </div>
-            <div class="card-body">
-                <div class="row no-gutters">
-                    @foreach ($galleries as $item)
-                        @foreach ($item->media as $photo)
-                            <div class="col-lg-2"> 
-                                <img src="{{ $photo->original_url }}" height="100px" width="100%" alt="{{ $item->name }}">
-                            </div>
-                        @endforeach
+    <div class="card">
+        <div class="card-header">
+            Gallery List
+        </div>
+        <div class="card-body">
+            <div class="row no-gutters">
+                @foreach ($galleries as $item)
+                    @foreach ($item->media as $photo)
+                        <div class="col-lg-2"> 
+                            <img src="{{ $photo->original_url }}" height="100px" width="100%" alt="{{ $item->name }}">
+                        </div>
                     @endforeach
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

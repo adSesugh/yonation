@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <table class="table table-auto" style="height: 100px;" id="banners">
+                <table class="table table-auto display" style="height: 100px;" id="banners">
                     <thead>
                         <tr>
                             <th class="align-middle">s/N</th>

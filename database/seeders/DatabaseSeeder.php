@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Resume;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -18,13 +19,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         //User::factory(1)->create();
+        Resume::factory(20000)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(DomainTableSeeder::class); 
-        $this->call(DegreeTableSeeder::class);
+        //$this->call(DomainTableSeeder::class); 
+        //$this->call(DegreeTableSeeder::class);
     }
 }
