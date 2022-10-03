@@ -84,7 +84,7 @@
                                 <a href="#" class="footer-link">
                                     <div class="row">
                                         <div class="col-lg-2">
-                                            <img src="{{ $item->media[0]->original_url }}" alt="{{ $item->title }}">
+                                            <img src="{{ $item->media[0]->original_url }}" style="height: 100px;width: 100px;" alt="{{ $item->title }}">
                                         </div>
                                         <div class="col-lg-10">
                                             {{ $item->title }}
