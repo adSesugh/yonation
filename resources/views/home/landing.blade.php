@@ -246,7 +246,7 @@
                         <div class="col-md-3 picture-item" data-groups='["{{ Str::lower(Str::slug($item->category->name)) }}"]'>
                             <div class="card portfolio overflow-hidden">
                                 <div>
-                                    <img src="{{ $photo->original_url }}" height="150" width="100%" alt="01" class="img-fluid" />
+                                    <img src="{{ $photo->original_url }}" height="150" width="100%" alt="{{ $item->name }}" class="img-fluid" />
                                     <div class="portfolio-overlay"></div>
                                     <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
                                         <a href="{{ $photo->original_url }}" class="lightbox">
@@ -277,18 +277,18 @@
     <!--START PROCESS-->
     <section class="section" id="howitwork">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-2">
                 <div class="col-lg-7">
                     <div class="text-center mb-2">
                         <h6 class="text-uppercase text-primary mb-0">Process</h6>
-                        <h3 class="text-capitalize title-heading">our business work Process</h3>
+                        <h3 class="text-capitalize title-heading">Our work process</h3>
                         <div class="title-border"></div>
                     </div>
                 </div>
                 <!--end col-->
             </div>
             <!--end row-->
-            <div class="row">
+            <div class="row mt-2">
                 <div class="col-md-4">
                     <div class="process-box text-center">
                         <img src="images/idea.svg" alt="idea" height="60" />
@@ -485,35 +485,36 @@
                 <!--edn col-->
                 <div class="col-lg-7">
                     <span id="error-msg"></span>
-                    <form method="post" name="myForm" onsubmit="return validateForm()" class="form mt-4 mt-lg-0">
+                    <form method="post" name="myForm" action="{{ route('post.message') }}" class="form mt-4 mt-lg-0">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" />
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" />
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="email" placeholder="Email" />
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-lg-12 col-md-6">
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject" />
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" />
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-lg-12 col-md-6">
                                 <div class="mb-3">
-                                    <input type="tel" class="form-control" id="number" placeholder="Number" />
+                                    <input type="tel" class="form-control" id="number" name="number" placeholder="Number" />
                                 </div>
                             </div>
                             <!--end col-->
                             <div class="col-lg-12">
                                 <div class="mb-4 pb-3">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="comments"
+                                    <textarea class="form-control" name="note" placeholder="Leave a message here" id="comments"
                                         style="height: 100px;"></textarea>
                                 </div>
                             </div>

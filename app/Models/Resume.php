@@ -15,6 +15,7 @@ class Resume extends Model implements HasMedia
 
     protected $fillable = [
         'job_id',
+        'code',
         'fullname',
         'email',
         'phone',

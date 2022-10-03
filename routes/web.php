@@ -33,6 +33,7 @@ Route::get('/blog/{slug}', [FrontController::class, 'blogDetails'])->name('blog.
 
 Route::get('/user-data', [FrontController::class, 'jobApply'])->name('job.apply');
 Route::post('/user-data', [FrontController::class, 'jobApplyStore'])->name('job.applyStore');
+Route::post('message', [FrontController::class, 'postMessage'])->name('post.message');
 
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('getResumes', [ResumeController::class, 'getResumes'])->name('resumes.list');
     Route::resource('/jobbank', JobController::class);
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+    Route::post('/settings', [SettingsController::class, 'postSettings'])->name('settings.post');
     Route::resource('/users', UserController::class);
 });
 

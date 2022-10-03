@@ -22,8 +22,19 @@ class ResumeController extends Controller
     public function getResumes(Request $request)
     {
         if ($request->ajax()) {
-            $resumes = Resume::orderBy('created_at', 'desc')->with(['degree', 'domain']);
+            $resumes = Resume::orderBy('created_at', 'desc')->with(['degree', 'domain', 'media']);
             return DataTables::of($resumes)->toJson();
         }
+    }
+
+    public function show($slug)
+    {
+        $resume = Resume::with(['media', 'domain', 'degree', 'job'])
+                ->where('slug', $slug)
+                ->first();
+
+        return view('admin.resume.details', [
+            'resume'    =>  $resume
+        ]);
     }
 }

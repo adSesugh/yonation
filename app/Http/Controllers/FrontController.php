@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostMessageRequest;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
@@ -9,10 +10,12 @@ use App\Models\Degree;
 use App\Models\Domain;
 use App\Models\Gallery;
 use App\Models\Job;
+use App\Models\Message;
 use App\Models\Resume;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class FrontController extends Controller
@@ -157,5 +160,23 @@ class FrontController extends Controller
         });
         
         return redirect()->route('index');
+    }
+
+    public function postMessage(PostMessageRequest $request)
+    {
+        try {
+            Message::create([
+                'name'  =>  $request->name,
+                'email' =>  $request->email,
+                'subject'   => $request->subject,
+                'number'    =>  $request->number,
+                'note'      => $request->note
+            ]);
+
+            return redirect()->route('index');
+
+        } catch (\Throwable $th) {
+            Log::info($th);
+        }
     }
 }
