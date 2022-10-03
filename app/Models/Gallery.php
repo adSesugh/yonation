@@ -45,4 +45,9 @@ class Gallery extends Model implements HasMedia
               ->height(900)
               ->sharpen(10);
     }
+
+    public function scopeIsActive($query)
+    {
+        return $query->where('active', true);
+    }
 }

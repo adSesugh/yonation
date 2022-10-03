@@ -30,7 +30,7 @@ class FrontController extends Controller
         $banners = Banner::with(['media'])->isActive()->inRandomOrder()->limit(3)->get();
         $blogs = Blog::with(['media', 'category'])->isActive()->inRandomOrder()->limit(3)->get();
         $categories = Category::get(['name']);
-        $galleries = Gallery::with(['media', 'category'])->get();
+        $galleries = Gallery::with(['media', 'category'])->isActive()->inRandomOrder()->limit(6)->get();
         $jobs = Job::orderBy('created_at', 'desc')->limit(6)->inRandomOrder()->with(['domain'])->get();
         return view('home.landing', [
             'banners' => $banners,
@@ -48,7 +48,12 @@ class FrontController extends Controller
 
     public function gallery()
     {
-        return view('gallery.findex');
+        $galleries = Gallery::isActive()->get();
+        $categories = Category::get(['name']);
+        return view('gallery.findex', [
+            'galleries' =>  $galleries,
+            'categories'    =>  $categories
+        ]);
     }
 
     public function jobs()
@@ -76,7 +81,7 @@ class FrontController extends Controller
 
     public function blog()
     {
-        $blogs = Blog::orderBy('created_at', 'desc')->with(['media', 'category'])->get();
+        $blogs = Blog::orderBy('created_at', 'desc')->with(['media', 'category'])->isActive()->get();
         return view('blog.flist', [
             'blogs' =>  $blogs
         ]);
