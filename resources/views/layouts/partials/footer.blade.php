@@ -83,11 +83,12 @@
                             <li class="footer-item">
                                 <a href="#" class="footer-link">
                                     <div class="row">
-                                        <div class="col-lg-2">
-                                            <img src="{{ $item->media[0]->original_url }}" style="height: 70px;width: 70px;" alt="{{ $item->title }}">
+                                        <div class="col-lg-3">
+                                            <img src="{{ $item->media[0]->original_url }}" style="height: 100px;width: 100px;" alt="{{ $item->title }}">
                                         </div>
-                                        <div class="col-lg-10">
-                                            {{ $item->title }}
+                                        <div class="col-lg-9">
+                                            <h5>{{ $item->title }}</h5>
+                                            <span>{{ $item->category->name }}</span>
                                         </div>
                                     </div>
                                 </a>
