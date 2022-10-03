@@ -12,7 +12,9 @@
                 <div class="col-lg-4">
                     <div class="row">
                         @if(count($resume->media) > 0)
-                            <img src="{{ $resume->media[0]->original_url }}" style="height: 350px;" alt="{{ $resume->fullname }}">
+                            <div class="col-lg-12 text-justify-center text-center">
+                                <img class="img-rounded" src="{{ $resume->media[0]->original_url }}" style="height: 150px;" alt="{{ $resume->fullname }}">
+                            </div>
                         @else
                             <div class="row">
                                 <div class="col-lg-12 text-justify-center text-center">
