@@ -117,7 +117,7 @@
                                 <!--end col-->
                                 <div class="col-md-5">
                                     <div class="vision-img text-lg-end text-center mb-4 mb-lg-0">
-                                        <img src="images/vision.png" alt="vision" class="img-fluid rounded-circle" />
+                                        <img src="images/vision.jpg" style="height: 450px;width: 450px;" alt="vision" class="img-fluid rounded-circle" />
                                     </div>
                                 </div>
                                 <!--end col-->
@@ -130,7 +130,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-5">
                                     <div class="mission-img text-lg-end text-center mb-4 mb-lg-0">
-                                        <img src="images/mission.jpg" alt="mission" class="img-fluid rounded-circle" />
+                                        <img src="images/mission.jpg" style="height: 450px;width: 450px;" alt="mission" class="img-fluid rounded-circle" />
                                     </div>
                                 </div>
                                 <!--end col-->
