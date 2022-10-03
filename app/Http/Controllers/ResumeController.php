@@ -38,7 +38,7 @@ class ResumeController extends Controller
         ]);
     }
 
-    public function searchApplicant(Request $request)
+    public function searchApplicant()
     {
         $applicant = Resume::with(['media', 'domain', 'degree', 'job'])->where('phone', 'like', '%'.request()->q.'%')->orWhere('mobile_no', 'like', '%'.request()->q.'%')->first();
         

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateResumeRequest;
 use App\Http\Requests\PostMessageRequest;
 use App\Models\Banner;
 use App\Models\Blog;
@@ -120,7 +121,7 @@ class FrontController extends Controller
         ]);
     }
 
-    public function jobApplyStore(Request $request)
+    public function jobApplyStore(CreateResumeRequest $request)
     {
         $request->validate([
             'fullname'  => ['required']

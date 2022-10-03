@@ -13,7 +13,7 @@ class CreateResumeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class CreateResumeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'fullname'  => ['required'],
+            'email' =>  ['required', 'email', 'unique:resumes'],
+            'phone' =>  ['required', 'max:15', 'unique:resumes'],
+            'mobile_no' =>  ['required', 'max:15', 'unique:resumes'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'mobile_no.required'    =>  'Mobile Number required',
+            'mobile_no.max' =>  "Mobile Number can't exceed 15 digits",
+            'mobile_no.unique'  =>  'Already registered',
+            'fullname.required' =>  'Full Name is required'
         ];
     }
 }
