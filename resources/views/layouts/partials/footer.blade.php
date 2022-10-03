@@ -56,44 +56,47 @@
                     <h6 class="text-uppercase">Quick Links</h6>
                     <ul class="list-unstyled mt-3 f-15">
                         <li class="footer-item">
-                            <a href="#" class="footer-link">Home</a>
+                            <a href="{{ route('index') }}" class="footer-link">Home</a>
                         </li>
                         <li class="footer-item">
-                            <a href="#" class="footer-link">About Us</a>
+                            <a href="{{ route('about.index') }}" class="footer-link">About Us</a>
                         </li>
-                        <li class="footer-item">
+                        {{-- <li class="footer-item">
                             <a href="#" class="footer-link">Jobs</a>
+                        </li> --}}
+                        <li class="footer-item">
+                            <a href="{{ route('gallery.index') }}" class="footer-link">Gallery</a>
                         </li>
                         <li class="footer-item">
-                            <a href="#" class="footer-link">Gallery</a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="#" class="footer-link">Blogs</a>
+                            <a href="{{ route('blog.index') }}" class="footer-link">Blogs</a>
                         </li>
                     </ul>
                 </div>
                 <!--end footer-nav-->
             </div>
             <!--end col-->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-5 col-6">
                 <div class="footer-nav mt-4 mt-lg-2">
-                    <h6 class="text-uppercase">Categories</h6>
+                    <h6 class="text-uppercase">Latest news</h6>
                     <ul class="list-unstyled mt-3">
-                        <li class="footer-item"><a href="#" class="footer-link">Agency</a></li>
-                        <li class="footer-item"><a href="#" class="footer-link">Business</a></li>
-                        <li class="footer-item"><a href="#" class="footer-link">Page Builder</a></li>
-                        <li class="footer-item"><a href="#" class="footer-link">Portfolio</a></li>
-                    </ul>
-                </div>
-                <!--end footer-nav-->
-            </div>
-            <!--end col-->
-            <div class="col-lg-2 col-6">
-                <div class="footer-nav mt-4 mt-lg-2">
-                    <h6 class="text-uppercase">Support</h6>
-                    <ul class="list-unstyled mt-3">
-                        <li class="footer-item"><a href="#" class="footer-link"></a></li>
-                        <li class="footer-item"><a href="#" class="footer-link"></a></li>
+                        @forelse (getBlogs() as $item)
+                            <li class="footer-item">
+                                <a href="#" class="footer-link">
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <img src="{{ $item->media[0]->original_url }}" alt="{{ $item->title }}">
+                                        </div>
+                                        <div class="col-lg-10">
+                                            {{ $item->title }}
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        @empty
+                            <li class="footer-item">
+                                No News published
+                            </li>
+                        @endforelse
                     </ul>
                 </div>
                 <!--end footer-nav-->
