@@ -11,7 +11,7 @@
                     <ul class="footer-social list-inline list-unstyled mt-3 justify-content-start">
                         @if(!is_null(getSetting('fb_url')))
                             <li class="social-link ms-0 list-inline-item">
-                                <a href="{{ getSetting('fb_url') }}">
+                                <a href="{{ getSetting('fb_url') }}" target="_blank">
                                     <i class="mdi mdi-facebook"></i>
                                 </a>
                             </li>
@@ -25,28 +25,28 @@
                         <!--end social-link-->
                         @if(!is_null(getSetting('twt_url')))
                             <li class="social-link list-inline-item">
-                                <a href="{{ getSetting('twt_url') }}">
+                                <a href="{{ getSetting('twt_url') }}" target="_blank">
                                     <i class="mdi mdi-twitter"></i>
                                 </a>
                             </li>
                         @endif
                         @if(!is_null(getSetting('insta_url')))
                             <li class="social-link list-inline-item">
-                                <a href="{{ getSetting('insta_url') }}">
+                                <a href="{{ getSetting('insta_url') }}" target="_blank">
                                     <i class="mdi mdi-instagram"></i>
                                 </a>
                             </li>
                         @endif
                         @if(!is_null(getSetting('linkedin_url')))
                             <li class="social-link list-inline-item">
-                                <a href="{{ getSetting('linkedin_url') }}">
+                                <a href="{{ getSetting('linkedin_url') }}" target="_blank">
                                     <i class="mdi mdi-linkedin"></i>
                                 </a>
                             </li>
                         @endif
                         @if(!is_null(getSetting('yt_url')))
                             <div class="social-link list-inline-item">
-                                <a href="{{ getSetting('yt_url') }}">
+                                <a href="{{ getSetting('yt_url') }}" target="_blank">
                                     <i class="mdi mdi-youtube"></i> 
                                 </a>
                             </div>

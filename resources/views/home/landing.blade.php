@@ -75,35 +75,35 @@
                                         <div class="d-flex">
                                             @if(!is_null(getSetting('fb_url')))
                                                 <div class="about-social" style="padding-right: 0.3em">
-                                                    <a href="{{ getSetting('fb_url') }}" class="text-primary">
+                                                    <a href="{{ getSetting('fb_url') }}" target="_blank" class="text-primary">
                                                         <i class="mdi mdi-facebook f-24"></i>
                                                     </a>
                                                 </div>
                                             @endif
                                             @if(!is_null(getSetting('twt_url')))
                                                 <div class="about-social mx-1">
-                                                    <a href="{{ getSetting('twt_url') }}" class="text-primary f-24">
+                                                    <a href="{{ getSetting('twt_url') }}" target="_blank" class="text-primary f-24">
                                                         <i class="mdi mdi-twitter"></i> 
                                                     </a>
                                                 </div>
                                             @endif
                                             @if(!is_null(getSetting('insta_url')))
                                                 <div class="about-social mx-1">
-                                                    <a href="{{ getSetting('insta_url') }}" class="text-primary f-24">
+                                                    <a href="{{ getSetting('insta_url') }}" target="_blank" class="text-primary f-24">
                                                         <i class="mdi mdi-instagram"></i> 
                                                     </a>
                                                 </div>
                                             @endif
                                             @if(!is_null(getSetting('linkedin_url')))
                                                 <div class="about-social mx-1">
-                                                    <a href="{{ getSetting('linkedin_url') }}" class="text-primary f-24">
+                                                    <a href="{{ getSetting('linkedin_url') }}" target="_blank" class="text-primary f-24">
                                                         <i class="mdi mdi-linkedin"></i> 
                                                     </a>
                                                 </div>
                                             @endif
                                             @if(!is_null(getSetting('yt_url')))
                                                 <div class="about-social mx-1">
-                                                    <a href="{{ getSetting('yt_url') }}" class="text-primary f-24">
+                                                    <a href="{{ getSetting('yt_url') }}" target="_blank" class="text-primary f-24">
                                                         <i class="mdi mdi-youtube"></i> 
                                                     </a>
                                                 </div>
@@ -492,35 +492,35 @@
                     <div class="d-flex ">
                         @if(!is_null(getSetting('fb_url')))
                             <div class="about-social" style="padding-right: 0.3em">
-                                <a href="{{ getSetting('fb_url') }}" class="text-primary">
+                                <a href="{{ getSetting('fb_url') }}" target="_blank" class="text-primary">
                                     <i class="mdi mdi-facebook f-24"></i>
                                 </a>
                             </div>
                         @endif
                         @if(!is_null(getSetting('twt_url')))
                             <div class="about-social mx-1">
-                                <a href="{{ getSetting('twt_url') }}" class="text-primary f-24">
+                                <a href="{{ getSetting('twt_url') }}" target="_blank" class="text-primary f-24">
                                     <i class="mdi mdi-twitter"></i> 
                                 </a>
                             </div>
                         @endif
                         @if(!is_null(getSetting('insta_url')))
                             <div class="about-social mx-1">
-                                <a href="{{ getSetting('insta_url') }}" class="text-primary f-24">
+                                <a href="{{ getSetting('insta_url') }}" target="_blank" class="text-primary f-24">
                                     <i class="mdi mdi-instagram"></i> 
                                 </a>
                             </div>
                         @endif
                         @if(!is_null(getSetting('linkedin_url')))
                             <div class="about-social mx-1">
-                                <a href="{{ getSetting('linkedin_url') }}" class="text-primary f-24">
+                                <a href="{{ getSetting('linkedin_url') }}" target="_blank" class="text-primary f-24">
                                     <i class="mdi mdi-linkedin"></i> 
                                 </a>
                             </div>
                         @endif
                         @if(!is_null(getSetting('yt_url')))
                             <div class="about-social mx-1">
-                                <a href="{{ getSetting('yt_url') }}" class="text-primary f-24">
+                                <a href="{{ getSetting('yt_url') }}" target="_blank" class="text-primary f-24">
                                     <i class="mdi mdi-youtube"></i> 
                                 </a>
                             </div>
