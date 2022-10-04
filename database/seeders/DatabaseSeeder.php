@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         //User::factory(1)->create();
-        Resume::factory(20000)->create();
+        //Resume::factory(20000)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
 
         //$this->call(DomainTableSeeder::class); 
         //$this->call(DegreeTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
     }
 }

@@ -20,25 +20,31 @@
                         <div class="row mb-3">
                             <label for="fb_url" class="col-sm-4 col-form-label">Facebook URL</label>
                             <div class="col-sm-6">
-                                <input type="url" class="form-control" name="fb_url" value="{{ $settings[5] }}" id="fb_url">
+                                <input type="url" class="form-control" name="fb_url" value="{{ $settings[5] }}" id="fb_url" placeholder="Facebook link">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="twt_url" class="col-sm-4 col-form-label">Twitter URL</label>
                             <div class="col-sm-6">
-                                <input type="url" class="form-control" name="twt_url" value="{{ $settings[6] }}" id="twt_url">
+                                <input type="url" class="form-control" name="twt_url" value="{{ $settings[6] }}" id="twt_url" placeholder="Twitter link">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="insta_url" class="col-sm-4 col-form-label">Instagram URL</label>
                             <div class="col-sm-6">
-                                <input type="url" class="form-control" name="insta_url" value="{{ $settings[7] }}" id="insta_url">
+                                <input type="url" class="form-control" name="insta_url" value="{{ $settings[7] }}" id="insta_url" placeholder="Instagram link">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="linkedin_url" class="col-sm-4 col-form-label">LinkedIn URL</label>
                             <div class="col-sm-6">
-                                <input type="url" class="form-control" name="linkedin_url" value="{{ $settings[8] }}" id="linkedin_url">
+                                <input type="url" class="form-control" name="linkedin_url" value="{{ $settings[8] }}" id="linkedin_url" placeholder="Linkedin link">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="yt_url" class="col-sm-4 col-form-label">Youtube URL</label>
+                            <div class="col-sm-6">
+                                <input type="url" class="form-control" name="yt_url" value="{{ $settings[10] }}" id="yt_url" placeholder="Youtube link">
                             </div>
                         </div>
                         <div class="row mb-3">
