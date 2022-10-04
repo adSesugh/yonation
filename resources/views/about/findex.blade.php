@@ -8,7 +8,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
             <div class="row mb-4">
-                <iframe width="420" height="450" src="https://www.youtube.com/embed/fRy92OJCtcY" title="The Yoruba from Prehistory to the Present" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {{-- <iframe width="420" height="450" src="https://www.youtube.com/embed/fRy92OJCtcY" title="The Yoruba from Prehistory to the Present" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> --}}
             </div>
             <p>
                 The Yoruba are among the most storied groups in Africa. Their ancestral homeland cuts across present-day southwest Nigeria, Benin Republic and Togo in West Africa. They number between 40 and 60 million. Their dynamic culture, philosophy, arts, language, sociology and history have attracted numerous studies.
