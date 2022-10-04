@@ -73,17 +73,41 @@
                                             {{ Str::limit('This kingdom was founded by the deity Oduduwa, who is believed to have created the world. Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth. The Ethnic group became popular internationally due to their trading with the Portuguese. The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking, and ivory and wood carving.', 259) }}
                                         </p>
                                         <div class="d-flex">
-                                            <div class="about-social">
-                                                <a href="#" class="text-primary">
-                                                    <i class="mdi mdi-facebook"></i>
-                                                </a>
-                                            </div>
-                                            <div class="about-social mx-2">
-                                                <a href="#" class="text-primary"><i class="mdi mdi-google"></i> </a>
-                                            </div>
-                                            <div class="about-social">
-                                                <a href="#" class="text-primary"><i class="mdi mdi-instagram"></i> </a>
-                                            </div>
+                                            @if(!is_null(getSetting('fb_url')))
+                                                <div class="about-social" style="padding-right: 0.3em">
+                                                    <a href="{{ getSetting('fb_url') }}" class="text-primary">
+                                                        <i class="mdi mdi-facebook f-24"></i>
+                                                    </a>
+                                                </div>
+                                            @endif
+                                            @if(!is_null(getSetting('twt_url')))
+                                                <div class="about-social mx-1">
+                                                    <a href="{{ getSetting('twt_url') }}" class="text-primary f-24">
+                                                        <i class="mdi mdi-twitter"></i> 
+                                                    </a>
+                                                </div>
+                                            @endif
+                                            @if(!is_null(getSetting('insta_url')))
+                                                <div class="about-social mx-1">
+                                                    <a href="{{ getSetting('insta_url') }}" class="text-primary f-24">
+                                                        <i class="mdi mdi-instagram"></i> 
+                                                    </a>
+                                                </div>
+                                            @endif
+                                            @if(!is_null(getSetting('linkedin_url')))
+                                                <div class="about-social mx-1">
+                                                    <a href="{{ getSetting('linkedin_url') }}" class="text-primary f-24">
+                                                        <i class="mdi mdi-linkedin"></i> 
+                                                    </a>
+                                                </div>
+                                            @endif
+                                            @if(!is_null(getSetting('yt_url')))
+                                                <div class="about-social mx-1">
+                                                    <a href="{{ getSetting('yt_url') }}" class="text-primary f-24">
+                                                        <i class="mdi mdi-youtube"></i> 
+                                                    </a>
+                                                </div>
+                                            @endif
                                         </div>
                                         <div class="mt-3">
                                             <a href="{{ route('about.index') }}" class="text-primary">Learn More <span
@@ -491,6 +515,13 @@
                             <div class="about-social mx-1">
                                 <a href="{{ getSetting('linkedin_url') }}" class="text-primary f-24">
                                     <i class="mdi mdi-linkedin"></i> 
+                                </a>
+                            </div>
+                        @endif
+                        @if(!is_null(getSetting('yt_url')))
+                            <div class="about-social mx-1">
+                                <a href="{{ getSetting('yt_url') }}" class="text-primary f-24">
+                                    <i class="mdi mdi-youtube"></i> 
                                 </a>
                             </div>
                         @endif

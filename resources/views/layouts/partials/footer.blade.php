@@ -44,6 +44,13 @@
                                 </a>
                             </li>
                         @endif
+                        @if(!is_null(getSetting('yt_url')))
+                            <div class="social-link list-inline-item">
+                                <a href="{{ getSetting('yt_url') }}">
+                                    <i class="mdi mdi-youtube"></i> 
+                                </a>
+                            </div>
+                        @endif
                         <!--end social-link-->
                     </ul>
                     <!--end footer-social-->
