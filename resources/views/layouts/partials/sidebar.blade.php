@@ -34,11 +34,11 @@
             <i class="fas fa-images" aria-hidden="true"></i>
             <span>Gallery</span></a>
     </li>
-    <li class="nav-item {{ Request::is('jobbank*') ? 'active' : '' }}">
+    {{-- <li class="nav-item {{ Request::is('jobbank*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('jobbank.index') }}">
             <i class="fas fa-hotdog" aria-hidden="true"></i>
             <span>Job Bank</span></a>
-    </li>
+    </li> --}}
     <li class="nav-item {{ Request::is('blogs*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('blogs.index') }}">
             <i class="fa fa-rss" aria-hidden="true"></i>
