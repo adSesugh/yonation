@@ -20,6 +20,8 @@ class DegreeTableSeeder extends Seeder
         $data = [
             'First School Leaving Certificate',
             "O'level WEAC/NECO",
+            'OND',
+            'HND',
             'Associate Degree',
             "Bachelor's Degree",
             'Masters Degree',

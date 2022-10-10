@@ -47,7 +47,60 @@ class DomainTableSeeder extends Seeder
             'Trades & Services'
         ];  
 
-        foreach($data as $item){
+        $newData = [
+            'Accounting',
+            'Aerospace',
+            'Agriculture',
+            'Anthropology',
+            'Architecture',
+            'Art History',
+            'Biology',
+            'Business Administration',
+            'Chemical Engineering',
+            'Chemistry',
+            'Civil Engineering',
+            'Communications',
+            'Computer Engineering',
+            'Computer Science',
+            'Construction',
+            'Criminal Justice',
+            'Drama',
+            'Economics',
+            'Education',
+            'Electrical Engineering',
+            'English',
+            'Film',
+            'Finance',
+            'Forestry',
+            'Geography',
+            'Graphic Design',
+            'Health Care Adminstration',
+            'History',
+            'Hospitality & Tourism',
+            'Industrial Engineering',
+            'Information Technology',
+            'Interior Design',
+            'International Relations',
+            'Journalism',
+            'Management Information System',
+            'Marketing',
+            'Maths',
+            'Mechanical Engineering',
+            'Music',
+            'Nursing',
+            'Nutrition',
+            'Photography',
+            'Physician Assistant',
+            'Physics',
+            'Political Science',
+            'Psychology',
+            'Religion',
+            'Sociology',
+            'Spanish',
+            'Other'
+        ];
+
+        foreach($newData as $item){
             Domain::create([
                 'name'  =>  $item
             ]);
