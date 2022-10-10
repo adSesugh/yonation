@@ -165,7 +165,7 @@ class FrontController extends Controller
             }
         });
         
-        return redirect()->route('index');
+        return redirect()->route('job.apply')->with(['success' => 'Thank you for submitting your details...']);
     }
 
     public function postMessage(PostMessageRequest $request)
