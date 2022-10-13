@@ -47,13 +47,13 @@
                                 <td class="align-middle">
                                     <div class="row">
                                         @if ($item->active)
-                                            <a class="btn btn-sm" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
+                                            <a class="btn btn-sm" href="{{ route('banners.markas', [$item->id, 'inactive']) }}" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
                                                 <i class="fas fa-delete" aria-hidden="true"></i>
                                                 <i class="fa-sharp fa-solid fa-rotate"></i>
                                                 Unpublish
                                             </a>
                                         @else
-                                            <a class="btn btn-sm" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
+                                            <a class="btn btn-sm" href="{{ route('banners.markas', [$item->id, 'active']) }}" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
                                                 <i class="fas fa-check" aria-hidden="true"></i>
                                                 <i class="fa-sharp fa-solid fa-rotate"></i>
                                                 Publish

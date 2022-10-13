@@ -141,4 +141,17 @@ class BannerController extends Controller
     {
         abort(403);
     }
+
+    public function markAs($id, $value){
+        $banner = Banner::findOrFail($id);
+        if($value === 'active'){
+            $banner->active = true;
+        }
+        else {
+            $banner->active = false;
+        }
+        $banner->save();
+
+        return redirect()->route('banners.index');
+    }
 }

@@ -39,6 +39,7 @@ Route::post('message', [FrontController::class, 'postMessage'])->name('post.mess
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
     Route::resource('/banners', BannerController::class);
+    Route::get('mark_as/{id}/{value}', [BannerController::class, 'markAs'])->name('banners.markas');
     Route::resource('/categories', CategoryController::class)->except(['show']);
     Route::resource('/blogs', BlogController::class);
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
