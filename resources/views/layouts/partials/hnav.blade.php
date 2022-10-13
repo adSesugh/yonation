@@ -30,7 +30,7 @@
             </ul>
             <!--end navbar nav-->
             <div class="login-btn ms-lg-4 mt-2 mt-lg-0">
-                <a href="{{ route('/') }}" class="btn btn-primary rounded-pill btn-sm">
+                <a href="{{ route('index') }}" class="btn btn-primary rounded-pill btn-sm">
                     Register
                 </a>
             </div>
