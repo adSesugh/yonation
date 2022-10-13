@@ -33,7 +33,9 @@
                             <tr>
                                 <td class="align-middle">{{ ++$key }}</td>
                                 <td class="align-middle">
-                                    <img height="50px" src="{{ $item->media[0]->original_url }}" alt="{{ $item->title }}">
+                                    @if(count($item->media) > 0)
+                                        <img height="50px" src="{{ $item->media[0]->original_url }}" alt="{{ $item->title }}">
+                                    @endif
                                 </td>
                                 <td class="align-middle">
                                     <div class="row">
@@ -43,10 +45,26 @@
                                     </div>
                                 </td>
                                 <td class="align-middle">
-                                    <a href="" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
-                                        <i class="fas fa-check" aria-hidden="true"></i>
-                                        <i class="fa-sharp fa-solid fa-rotate"></i>
-                                    </a>
+                                    <div class="row">
+                                        @if ($item->active)
+                                            <a class="btn btn-sm" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
+                                                <i class="fas fa-delete" aria-hidden="true"></i>
+                                                <i class="fa-sharp fa-solid fa-rotate"></i>
+                                                Unpublish
+                                            </a>
+                                        @else
+                                            <a class="btn btn-sm" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
+                                                <i class="fas fa-check" aria-hidden="true"></i>
+                                                <i class="fa-sharp fa-solid fa-rotate"></i>
+                                                Publish
+                                            </a>
+                                        @endif
+                                        <a class="btn btn-sm btn-default" href="{{ route('banners.edit', $item->id) }}" data-bs-toggle="tooltip" data-bs-placement="top" title="@if($item->active) {{ 'Mark Inactive' }} @else {{ 'Mark active' }} @endif">
+                                            <i class="fas fa-edit" aria-hidden="true"></i>
+                                            <i class="fa-sharp fa-solid fa-rotate"></i>
+                                            Edit
+                                        </a>
+                                    </div>
                                     <span class="btn-sm btn-primary">@if($item->active) {{ 'Published' }} @else {{ 'Unpublish' }} @endif</span>
                                 </td>
                             </tr>

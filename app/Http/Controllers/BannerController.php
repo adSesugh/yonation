@@ -41,7 +41,8 @@ class BannerController extends Controller
         $request->validate([
             'title' => ['required'],
             'sub_title' => ['required'],
-            'description'   => ['required']
+            'description'   => ['required'],
+            'banner'    =>  ['required']
         ]);
 
         $bannerPath = null;
@@ -89,7 +90,7 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
-        //
+        return view('admin.banner.edit')->with(['banner' => $banner]);
     }
 
     /**
@@ -101,7 +102,33 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'sub_title' =>  ['required'],
+            'description'   =>  ['required']
+        ]);
+
+        $bannerPath = null;
+        if($request->has('banner') && !is_null($request->file('banner'))) {
+            $banner = $request->file('banner');
+            $bannerName = $banner->getClientOriginalName();
+            $bannerPath = $request->file('banner')->storeAs('media', $bannerName, 'public');
+        }
+
+        DB::transaction(function() use ($request, $bannerPath, $banner){
+
+            $banner->title =  $request->title;
+            $banner->sub_title   = $request->sub_title;
+            $banner->description   = $request->description;
+            $banner->save();
+    
+            if(!is_null($bannerPath)){
+                $banner->addMedia(storage_path('app/public/'.$bannerPath))->toMediaCollection();
+                $banner->media;
+            }
+        }); 
+        
+        return redirect()->route('banners.index');
     }
 
     /**
