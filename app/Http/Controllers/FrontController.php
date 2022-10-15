@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
-use BayAreaWebPro\MultiStepForms\MultiStepForm;
+//use BayAreaWebPro\MultiStepForms\MultiStepForm;
 
 class FrontController extends Controller
 {
@@ -115,52 +115,52 @@ class FrontController extends Controller
             'Female' =>  'Female'
         ];
 
-        $form = MultiStepForm::make('job.apply', [
-            'degrees'   =>  $degrees,
-            'domains'   =>  $domains,
-            'genders'   =>  $genders
-        ]);
-        $form->namespaced('onboarding');
-        $form->canNavigateBack(true);
-        $form->addStep(1, [
-            'rules' => ['name' => 'required'],
-            'messages' => ['name.required' => 'Your name is required silly.'],
-        ]);
-    
-        // Validate Step 2
-        $form->addStep(2, [
-            'rules' => ['role' => 'required|string'],
-        ]);
-    
-        // Add non-validated step...
-        $form->addStep(3,[
-           'data' => ['message' => "Great Job, Your Done!"]
-        ]);
-
-        // After step validation...
-        $form->onStep(3, function (MultiStepForm $form) {
-           logger('onStep3', $form->toArray());
-           
-           if($form->request->get('submit') === 'reset'){
-                $form->reset();
-           }else{
-               return response('OK');
-           }
-        });
-       
-        // Modify data before saved to session after each step.
-        $form->beforeSave(function(array $data) {
-        
-            // Transform non-serializable objects to paths, array data etc...
-            return $data;
-        });
-
-        return $form;
-        // return view('job.apply', [
+        // $form = MultiStepForm::make('job.apply', [
         //     'degrees'   =>  $degrees,
         //     'domains'   =>  $domains,
-        //     'genders'   => $genders
+        //     'genders'   =>  $genders
         // ]);
+        // $form->namespaced('onboarding');
+        // $form->canNavigateBack(true);
+        // $form->addStep(1, [
+        //     'rules' => ['name' => 'required'],
+        //     'messages' => ['name.required' => 'Your name is required silly.'],
+        // ]);
+    
+        // // Validate Step 2
+        // $form->addStep(2, [
+        //     'rules' => ['role' => 'required|string'],
+        // ]);
+    
+        // // Add non-validated step...
+        // $form->addStep(3,[
+        //    'data' => ['message' => "Great Job, Your Done!"]
+        // ]);
+
+        // // After step validation...
+        // $form->onStep(3, function (MultiStepForm $form) {
+        //    logger('onStep3', $form->toArray());
+           
+        //    if($form->request->get('submit') === 'reset'){
+        //         $form->reset();
+        //    }else{
+        //        return response('OK');
+        //    }
+        // });
+       
+        // // Modify data before saved to session after each step.
+        // $form->beforeSave(function(array $data) {
+        
+        //     // Transform non-serializable objects to paths, array data etc...
+        //     return $data;
+        // });
+
+        // return $form;
+        return view('job.apply', [
+            'degrees'   =>  $degrees,
+            'domains'   =>  $domains,
+            'genders'   => $genders
+        ]);
     }
 
     public function jobApplyStore(CreateResumeRequest $request)
