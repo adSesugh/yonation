@@ -29,6 +29,7 @@
 
     <!--custom css-->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+    @stack('css')
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-navlist" data-bs-offset="71">

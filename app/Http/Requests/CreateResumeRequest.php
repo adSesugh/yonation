@@ -37,7 +37,15 @@ class CreateResumeRequest extends FormRequest
             'course'    =>  ['required'],
             'school_name'   =>  ['required'],
             'photo' =>  ['required'],
-            'resumecv'  => ['required']
+            'resumecv'  => ['required'],
+            'terms' =>  ['required'],
+            'father'    =>  ['required'],
+            'fcity' =>  ['required'],
+            'fstate'    =>  ['required'],
+            'mother'    =>  ['required'],
+            'mcity' =>  ['required'],
+            'mstate'    =>  ['required'],
+            'address'   => ['required']
         ];
     }
 
@@ -52,6 +60,10 @@ class CreateResumeRequest extends FormRequest
             'resumecv.required' =>  'Please upload CV',
             'domain_id.required' =>  'Select a job function',
             'degree_id.required' =>  'Select your qualification',
+            'fcity.required'    =>  'Provide Father\'s City',
+            'fstate.required'   =>  'Provide Father\'s State',
+            'mcity.required'    =>  'Provide Mother\'s City',
+            'mstate.required'   =>  'Provide Mother\'s State'
         ];
     }
 }

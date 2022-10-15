@@ -33,8 +33,10 @@ Route::get('/blog', [FrontController::class, 'blog'])->name('blog.index');
 Route::get('/blog/{slug}', [FrontController::class, 'blogDetails'])->name('blog.detail');
 
 Route::get('/user-data', [FrontController::class, 'jobApply'])->name('job.apply');
-//Route::post('/user-data', [FrontController::class, 'jobApplyStore'])->name('job.applyStore');
+Route::post('/user-data', [FrontController::class, 'jobApplyStore'])->name('job.applyStore');
 Route::post('message', [FrontController::class, 'postMessage'])->name('post.message');
+
+Route::get('step-form', [FrontController::class, 'stepForm'])->name('step');
 
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');

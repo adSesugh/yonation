@@ -28,7 +28,14 @@ class Resume extends Model implements HasMedia
         'year_to',
         'course',
         'degree_id',
-        'slug'
+        'slug',
+        'address',
+        'father',
+        'fcity',
+        'fstate',
+        'mother',
+        'mcity',
+        'mstate'
     ];
 
     public static function boot()

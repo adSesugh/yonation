@@ -165,10 +165,6 @@ class FrontController extends Controller
 
     public function jobApplyStore(CreateResumeRequest $request)
     {
-        $request->validate([
-            'fullname'  => ['required']
-        ]);
-
         $photoPath = null;
         $resumePath = null;
 
@@ -197,7 +193,14 @@ class FrontController extends Controller
                 'year_from' =>  $request->year_from,
                 'year_to'   =>  $request->year_to,
                 'course'    =>  $request->course,
-                'degree_id' =>  $request->degree_id
+                'degree_id' =>  $request->degree_id,
+                'address'   =>  $request->address,
+                'father'    =>  $request->father,
+                'fcity' =>  $request->fcity,
+                'fstate'    =>  $request->fstate,
+                'mother'    =>  $request->mother,
+                'mcity' =>  $request->mcity,
+                'mstate'    =>  $request->mstate
             ]);
     
             if(!is_null($photoPath) || !is_null($resumePath)){
@@ -226,5 +229,10 @@ class FrontController extends Controller
         } catch (\Throwable $th) {
             Log::info($th);
         }
+    }
+
+    public function stepForm(Request $request)
+    {
+        return view('step1');
     }
 }

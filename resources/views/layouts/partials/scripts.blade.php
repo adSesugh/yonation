@@ -14,3 +14,5 @@
  <script src="{{ asset('js/contact-form.js') }}"></script>
  <!--app-->
  <script src="{{ asset('js/app.js') }}"></script>
+
+ @stack('js')
