@@ -30,7 +30,7 @@
                         </div>
                         {!! Form::open(['class' => 'user', 'route' => 'job.applyStore', 'enctype' => 'multipart/form-data', 'method' => 'POST', 'id' => 'regForm']) !!}
                             @csrf
-                            {{-- <div class="tab">
+                            <div class="tab">
                                 <div class="form-group">
                                     <input type="text" class="form-control w-full @error('fullname') is-invalid @enderror" name="fullname" id="fullname" placeholder="Full Name" value="{{ old('fullname') }}">
                                     @error('fullname')
@@ -235,7 +235,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div> --}}
+                            </div>
                             <div class="tab">
                                 <div class="row">
                                     <div class="col-lg-1">
