@@ -230,9 +230,4 @@ class FrontController extends Controller
             Log::info($th);
         }
     }
-
-    public function stepForm(Request $request)
-    {
-        return view('step1');
-    }
 }

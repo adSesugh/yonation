@@ -36,8 +36,6 @@ Route::get('/user-data', [FrontController::class, 'jobApply'])->name('job.apply'
 Route::post('/user-data', [FrontController::class, 'jobApplyStore'])->name('job.applyStore');
 Route::post('message', [FrontController::class, 'postMessage'])->name('post.message');
 
-Route::get('step-form', [FrontController::class, 'stepForm'])->name('step');
-
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
     Route::resource('/banners', BannerController::class);
