@@ -112,6 +112,66 @@
                             @endif
                         </fieldset>
                     </div>
+                    <hr>
+                    <div class="row">
+                        <fieldset class="mx-2" style="border: aqua 1px">
+                            <legend style="font-size: 16px; font-weight: 700">Father Information</legend>
+                            @if(isset($resume->father))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">Name:</label>
+                                    <span class="text-capitalize">{{ $resume->father }}</span>
+                                </div>
+                            @endif
+                            @if(isset($resume->fcity))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">City:</label>
+                                    <span class="text-capitalize">{{ $resume->fcity }}</span>
+                                </div>
+                            @endif
+                            @if(isset($resume->fstate))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">State:</label>
+                                    <span class="text-capitalize">{{ $resume->fstate }}</span>
+                                </div>
+                            @endif
+                        </fieldset>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <fieldset class="mx-2" style="border: aqua 1px">
+                            <legend style="font-size: 16px; font-weight: 700">Mother Information</legend>
+                            @if(isset($resume->mother))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">Name:</label>
+                                    <span class="text-capitalize">{{ $resume->mother }}</span>
+                                </div>
+                            @endif
+                            @if(isset($resume->mcity))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">City:</label>
+                                    <span class="text-capitalize">{{ $resume->mcity }}</span>
+                                </div>
+                            @endif
+                            @if(isset($resume->mstate))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">State:</label>
+                                    <span class="text-capitalize">{{ $resume->mstate }}</span>
+                                </div>
+                            @endif
+                        </fieldset>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <fieldset class="mx-2" style="border: aqua 1px">
+                            <legend style="font-size: 16px; font-weight: 700">Applicant Address</legend>
+                            @if(isset($resume->address))
+                                <div class="mx-2">
+                                    <label for="" style="font-weight: 700">Name:</label>
+                                    <span class="text-capitalize">{{ $resume->address }}</span>
+                                </div>
+                            @endif
+                        </fieldset>
+                    </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="card">

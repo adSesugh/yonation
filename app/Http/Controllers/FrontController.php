@@ -163,21 +163,22 @@ class FrontController extends Controller
         ]);
     }
 
-    public function jobApplyStore(Request $request)
+    public function jobApplyStore(CreateResumeRequest $request)
     {
         $photoPath = null;
         $resumePath = null;
-        Log::info($request->address);
 
         if($request->has('photo') && $request->file('photo')){
             //$photo = $request->file('photo');
-            $photoName = Str::slug($request->fullname.' Passport'); //$photo->getClientOriginalName();
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $photoName = Str::slug($request->fullname.' Passport').'.'.$extension; //$photo->getClientOriginalName();
             $photoPath = $request->file('photo')->storeAs('media', $photoName, 'public');
         }
 
         if($request->has('resumecv') && $request->file('resumecv')){
             //$resume = $request->file('resumecv');
-            $resumeName = Str::slug($request->fullname.' CV'); // $resume->getClientOriginalName();
+            $rextension = $request->file('resumecv')->getClientOriginalExtension();
+            $resumeName = Str::slug($request->fullname.' CV').'.'.$rextension; // $resume->getClientOriginalName();
             $resumePath = $request->file('resumecv')->storeAs('media', $resumeName, 'public');
         }
 
