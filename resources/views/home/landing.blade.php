@@ -70,7 +70,7 @@
                                             </em>
                                         </p>
                                         <p class="text-muted">
-                                            {{ Str::limit('This kingdom was founded by the deity Odua uwa, who is believed to have created the world. Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth. The Ethnic group became popular internationally due to their trading with the Portuguese. The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking, and ivory and wood carving.', 259) }}
+                                            {{ Str::limit('Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth. The Ethnic group became popular internationally due to their trading with the Portuguese. The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking, and ivory and wood carving.', 259) }}
                                         </p>
                                         <div class="d-flex">
                                             @if(!is_null(getSetting('fb_url')))

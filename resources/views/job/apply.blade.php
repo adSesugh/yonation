@@ -27,6 +27,11 @@
                                 <span class="step"></span>
                                 <span class="step"></span>
                             </div>
+                            <div>
+                                @if(Session::has('success'))
+                                    <p class="alert alert-info">{{ Session::get('success') }}</p>
+                                @endif
+                            </div>
                         </div>
                         {!! Form::open(['class' => 'user', 'route' => 'job.applyStore', 'enctype' => 'multipart/form-data', 'method' => 'POST', 'id' => 'regForm']) !!}
                             @csrf
@@ -239,7 +244,7 @@
                             <div class="tab">
                                 <div class="row">
                                     <div class="col-lg-1">
-                                        <input class="form-check-input" name="terms" type="checkbox" id="terms" value="{{ old('terms') }}">
+                                        <input name="terms" type="checkbox" checked id="terms">
                                     </div>
                                     <div class="col-lg-11">
                                         <p>
@@ -261,6 +266,7 @@
                                 </div>
                                 <div class="col-lg-6 text-right">
                                     <button class="btn btn-primary btn-user" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <button class="btn btn-primary btn-user" type="submit" id="submitBtn">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -332,6 +338,7 @@
             // This function will display the specified tab of the form ...
             var x = document.getElementsByClassName("tab");
             x[n].style.display = "block";
+            document.getElementById("submitBtn").style.display = "none";
             // ... and fix the Previous/Next buttons:
             if (n == 0) {
                 document.getElementById("prevBtn").style.display = "none";

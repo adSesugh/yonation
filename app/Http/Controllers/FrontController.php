@@ -163,10 +163,11 @@ class FrontController extends Controller
         ]);
     }
 
-    public function jobApplyStore(CreateResumeRequest $request)
+    public function jobApplyStore(Request $request)
     {
         $photoPath = null;
         $resumePath = null;
+        Log::info($request->address);
 
         if($request->has('photo') && $request->file('photo')){
             //$photo = $request->file('photo');
