@@ -15,7 +15,7 @@
                         <h6 class="text-primary text-uppercase mb-0">About Us</h6>
                         <h3 class="title-heading f-14">We'r a dynamic team of creatives people innovation</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted pt-3 mx-md-5">YORUBA PEOPLE FIRST Building a universal community of united Yoruba descendants for Yorubaland’s development.</p>
+                        <p class="text-muted pt-3 mx-md-5">Yorubaland, indeed, the nation with one language, one culture and one people, is the hidden wealth of Africa.</p>
                     </div>
                     <!--end about-title-->
                 </div>
