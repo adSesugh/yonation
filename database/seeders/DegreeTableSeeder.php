@@ -26,7 +26,8 @@ class DegreeTableSeeder extends Seeder
             "Bachelor's Degree",
             'Masters Degree',
             'Graduate Certificate',
-            'Doctorate Degree'
+            'Doctorate Degree',
+            'No Basic Education'
         ];
 
         foreach ($data as $key => $value) {

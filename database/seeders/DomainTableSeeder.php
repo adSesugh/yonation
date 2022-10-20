@@ -91,6 +91,7 @@ class DomainTableSeeder extends Seeder
             'Nutrition',
             'Photography',
             'Physician Assistant',
+            'Physically Challenged',
             'Physics',
             'Political Science',
             'Psychology',
