@@ -36,7 +36,7 @@
                             <li class="nav-item mx-3" role="presentation">
                                 <button class="nav-link rounded-3" id="vision-tab" data-bs-toggle="pill"
                                     data-bs-target="#vision" type="button" role="tab" aria-controls="vision"
-                                    aria-selected="false">{{ translate('Vision') }}</button>
+                                    aria-selected="false">{{ translateText('Vision') }}</button>
                                 <!--end nav-link-->
                             </li>
                             <!--end nav-item-->
@@ -63,14 +63,14 @@
                                 <!--end col-->
                                 <div class="col-md-7">
                                     <div class="card border-0 p-3 ms-lg-4">
-                                        <h4 class="about-title">History</h4>
+                                        <h4 class="about-title">{{ translateText('History') }}</h4>
                                         <p class="mt-4 pt-3 text-muted mb-2">
                                             <em>
                                                 {{ translateText("The history of the Yoruba people begins in Ile-Ife(Ife Empire).") }}
                                             </em>
                                         </p>
                                         <p class="text-muted">
-                                            {{ Str::limit('Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth. The Ethnic group became popular internationally due to their trading with the Portuguese. The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking, and ivory and wood carving.', 259) }}
+                                            {{ translateText(Str::limit('Oduduwa was the first divine king of the Yoruba people. It is said the Yoruba people believe that their civilization began at Ile-Ife where the gods descended to earth. The Ethnic group became popular internationally due to their trading with the Portuguese. The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking, glassmaking, and ivory and wood carving.', 259)) }}
                                         </p>
                                         <div class="d-flex">
                                             @if(!is_null(getSetting('fb_url')))

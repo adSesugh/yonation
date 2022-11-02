@@ -27,9 +27,12 @@ if (!function_exists('getBlogs')) {
 
 function translateText($text){
     $trans = new GoogleTranslate();
-
-    $translation = $trans->translate('en', 'yo', $text);
-    return $translation;
+    try {
+        $translation = $trans->translate('en', 'yo', $text);
+        return $translation;
+    } catch (\Throwable $th) {
+        return $text;
+    } 
 }
 
 function textTranslation($text) {

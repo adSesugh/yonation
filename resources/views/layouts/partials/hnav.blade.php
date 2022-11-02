@@ -13,25 +13,25 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul id="navbar-navlist" class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('index') }}">Home</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('index') }}">{{ translateText('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('about-us') ? 'active' : '' }}" href="{{ route('about.index') }}">About Us</a>
+                    <a class="nav-link {{ Request::is('about-us') ? 'active' : '' }}" href="{{ route('about.index') }}">{{ translateText('About Us') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('gallery') ? 'active' : '' }}" href="{{ route('gallery.index') }}">Gallery</a>
+                    <a class="nav-link {{ Request::is('gallery') ? 'active' : '' }}" href="{{ route('gallery.index') }}">{{ translateText('Gallery') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('blog*') ? 'active' : '' }}" href="{{ route('blog.index') }}">Blogs</a>
+                    <a class="nav-link {{ Request::is('blog*') ? 'active' : '' }}" href="{{ route('blog.index') }}">{{ translateText('Blogs') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact Us</a>
+                    <a class="nav-link" href="#contact">{{ translateText('Contact Us') }}</a>
                 </li>
             </ul>
             <!--end navbar nav-->
             <div class="login-btn ms-lg-4 mt-2 mt-lg-0">
                 <a href="{{ route('job.apply') }}" class="btn btn-primary rounded-pill btn-sm">
-                    Register
+                    {{ translateText('Register') }}
                 </a>
             </div>
         </div>
