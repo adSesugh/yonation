@@ -263,7 +263,7 @@
             <!--end row-->
         </div>
         <!--end container-->
-        <div class="container-fluid px-0 mt-5">
+        <div class="container-fluid px-4 mt-5">
             <div class="row g-0" id="grid">
                 @foreach ($galleries as $item)
                     @foreach ($item->media as $photo)
