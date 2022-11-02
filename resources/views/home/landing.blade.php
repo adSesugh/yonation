@@ -270,7 +270,7 @@
                         <div class="col-md-3 picture-item" data-groups='["{{ Str::lower(Str::slug($item->category->name)) }}"]'>
                             <div class="card portfolio overflow-hidden">
                                 <div>
-                                    <img src="{{ $photo->original_url }}" height="250" alt="{{ $item->name }}" class="img-fluid" />
+                                    <img src="{{ $photo->original_url }}" height="300" alt="{{ $item->name }}" class="img-fluid" />
                                     <div class="portfolio-overlay"></div>
                                     <div class="portfolio-icon position-absolute top-50 start-50 translate-middle">
                                         <a href="{{ $photo->original_url }}" class="lightbox">
