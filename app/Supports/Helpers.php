@@ -34,7 +34,3 @@ function translateText($text){
         return $text;
     } 
 }
-
-function textTranslation($text) {
-
-}
