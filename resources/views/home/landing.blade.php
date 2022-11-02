@@ -7,7 +7,7 @@
 @section('content')
     @include('home.slider', $banners)
     <!--START ABOUT US-->
-    <section class="section">
+    <section class="section mx-4 border my-2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
