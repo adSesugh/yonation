@@ -2,6 +2,9 @@
 
 use App\Models\Blog;
 use App\Models\Settings;
+use Illuminate\Support\Facades\Session;
+use \Statickidz\GoogleTranslate;
+use Google\Cloud\Translate\V2\TranslateClient;
 
 if (!function_exists('getSetting')) {
   
@@ -20,4 +23,15 @@ if (!function_exists('getBlogs')) {
         
         return $blogs;
     }
+}
+
+function translateText($text){
+    $trans = new GoogleTranslate();
+
+    $translation = $trans->translate('en', 'yo', $text);
+    return $translation;
+}
+
+function textTranslation($text) {
+
 }

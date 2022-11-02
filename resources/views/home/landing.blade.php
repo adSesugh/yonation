@@ -7,15 +7,15 @@
 @section('content')
     @include('home.slider', $banners)
     <!--START ABOUT US-->
-    <section class="section mx-4 border my-2">
+    <section class="section card mx-4 bg-blog border border-2 my-2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="about-title text-center mb-5">
-                        <h6 class="text-primary text-uppercase mb-0">About Us</h6>
-                        <h3 class="title-heading f-14">We'r a dynamic team of creatives people innovation</h3>
+                        <h6 class="text-primary text-uppercase mb-0">{{ translateText('About Us') }}</h6>
+                        <h3 class="title-heading f-14">{{ translateText('We\'r a dynamic team of creatives people innovation') }}</h3>
                         <div class="title-border"></div>
-                        <p class="text-muted pt-3 mx-md-5">Yorubaland, indeed, the nation with one language, one culture and one people, is the hidden wealth of Africa.</p>
+                        <p class="text-muted pt-3 mx-md-5">{{ translateText("Yorubaland, indeed, the nation with one language, one culture and one people, is the hidden wealth of Africa.") }}</p>
                     </div>
                     <!--end about-title-->
                 </div>
@@ -29,21 +29,21 @@
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link rounded-3 active" id="history-tab" data-bs-toggle="pill"
                                     data-bs-target="#history" type="button" role="tab" aria-controls="history"
-                                    aria-selected="true">History</button>
+                                    aria-selected="true">{{ translateText('History') }}</button>
                                 <!--end nav-link-->
                             </li>
                             <!--end nav-item-->
                             <li class="nav-item mx-3" role="presentation">
                                 <button class="nav-link rounded-3" id="vision-tab" data-bs-toggle="pill"
                                     data-bs-target="#vision" type="button" role="tab" aria-controls="vision"
-                                    aria-selected="false">Vision</button>
+                                    aria-selected="false">{{ translate('Vision') }}</button>
                                 <!--end nav-link-->
                             </li>
                             <!--end nav-item-->
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link rounded-3" id="mission-tab" data-bs-toggle="pill"
                                     data-bs-target="#mission" type="button" role="tab" aria-controls="mission"
-                                    aria-selected="false">Mission</button>
+                                    aria-selected="false">{{ translateText('Mission') }}</button>
                                 <!--end nav-link-->
                             </li>
                             <!--end nav-item-->
@@ -66,7 +66,7 @@
                                         <h4 class="about-title">History</h4>
                                         <p class="mt-4 pt-3 text-muted mb-2">
                                             <em>
-                                                The history of the Yoruba people begins in Ile-Ife(Ife Empire).
+                                                {{ translateText("The history of the Yoruba people begins in Ile-Ife(Ife Empire).") }}
                                             </em>
                                         </p>
                                         <p class="text-muted">
@@ -110,7 +110,7 @@
                                             @endif
                                         </div>
                                         <div class="mt-3">
-                                            <a href="{{ route('about.index') }}" class="text-primary">Learn More <span
+                                            <a href="{{ route('about.index') }}" class="text-primary">{{ translateText("Learn More") }} <span
                                                     class="f-20">&#8594;</span></a>
                                         </div>
                                     </div>
