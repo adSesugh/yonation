@@ -5,7 +5,7 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="footer-info text-center text-md-start">
                     <a href="#">
-                        <img src="{{ asset('images/ynlogo.png') }}" alt="logo" height="100">
+                        <img src="{{ asset('images/ynlogo.png') }}" alt="logo" height="80">
                     </a>
                     <p class="text-white-50 mt-4">YORUBA PEOPLE FIRST Building a universal community of united Yoruba descendants for Yorubaland’s development.</p>
                     <ul class="footer-social list-inline list-unstyled mt-3 justify-content-start">

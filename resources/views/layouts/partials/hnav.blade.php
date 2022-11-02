@@ -2,8 +2,8 @@
 <nav id="navbar" class="navbar navbar-expand-lg fixed-top sticky">
     <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}">
-            <img src="{{ asset('images/ynlogo.png') }}" alt="logo" style="height: 80px;" class="logo-light" />
-            <img src="{{ asset('images/ynlogo.png') }}" alt="logo" style="height: 80px;" class="logo-dark" />
+            <img src="{{ asset('images/ynlogo.png') }}" alt="logo" style="height: 60px;" class="logo-light" />
+            <img src="{{ asset('images/ynlogo.png') }}" alt="logo" style="height: 60px;" class="logo-dark" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
