@@ -438,11 +438,11 @@
                                     <li class="list-inline-item"><i class="fas fa-comments-o" aria-hidden="true"> 116</i> --}}
                                     </li>
                                 </ul>
-                                <a href="{{ route('blogs.show', $item->slug) }}">
+                                <a href="{{ route('blog.detail', $item->slug) }}">
                                     <h5>{{ $item->title }}</h5>
                                 </a>
                                 <p class="text-muted">{{ Str::limit($item->description, 120)}}</p>
-                                <a href="{{ route('blogs.show', $item->slug) }}">Read More <span class="ps-1">&#8594;</span></a>
+                                <a href="{{ route('blog.detail', $item->slug) }}">Read More <span class="ps-1">&#8594;</span></a>
                             </div>
                             <!--end blog-content-->
                         </div>
