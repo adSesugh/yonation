@@ -28,7 +28,7 @@ function translateText($text)
 {
     try {
         $trans = new GoogleTranslate();
-        $translation = $trans->setSource('en')->setTarget('yo')->translate($text); //$trans->translate('en', 'yo', $text);
+        $translation = $trans->setSource('en')->setTarget('en')->translate($text); //$trans->translate('en', 'yo', $text);
         return $translation;
     } catch (\Throwable $th) {
         return $text;
