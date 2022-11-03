@@ -5,6 +5,7 @@ use App\Models\Settings;
 use Illuminate\Support\Facades\Session;
 use \Statickidz\GoogleTranslate;
 use Google\Cloud\Translate\V2\TranslateClient;
+use Illuminate\Support\Facades\Log;
 
 if (!function_exists('getSetting')) {
   
@@ -29,8 +30,9 @@ function translateText($text){
     $trans = new GoogleTranslate();
     try {
         $translation = $trans->translate('en', 'yo', $text);
+        Log::info($translation);
         return $translation;
     } catch (\Throwable $th) {
-        return $text;
+        //return $text;
     } 
 }
