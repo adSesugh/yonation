@@ -94,7 +94,7 @@
                                             <img src="{{ $item->media[0]->original_url }}" style="height: 80px;width: 100%;" alt="{{ $item->title }}">
                                         </div>
                                         <div class="col-lg-8">
-                                            <h5>{{ $item->title }}</h5>
+                                            <h6>{{ $item->title }}</h6>
                                             <span>{{ $item->category->name }}</span>
                                             <span>{{ Str::limit($item->description, 55) }}</span>
                                         </div>
