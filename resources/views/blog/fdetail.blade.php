@@ -28,11 +28,11 @@
                         <div class="col-lg-12 border-bottom">
                             <div class="row no-gutters">
                                 <div class="col-lg-2">
-                                    <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="70px" width="50px;">
+                                    <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="100px" width="100px;">
                                 </div>
                                 <div class="col-lg-8">
                                     <h6>{{ $blog->title }}</h6>
-                                    <p>{{ Str::limit($blog->description, 25) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
+                                    <p>{{ Str::limit($blog->description, 20) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
                                 </div>
                             </div>
                         </div>
