@@ -26,10 +26,8 @@
                 <div class="card body">
                     @foreach ($blogs as $blog)
                         <div class="row border-bottom">
-                            <div class="col-lg-2">
+                            <div class="col-lg-12">
                                 <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="100px">
-                            </div>
-                            <div class="col-lg-10 mr-2">
                                 <h6>{{ $blog->title }}</h6>
                                 <p>{{ Str::limit($blog->description, 25) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
                             </div>
