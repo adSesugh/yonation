@@ -21,7 +21,23 @@
             <p style="border: 2px; border-radius: 20px;">{{ $detail->description }}</p>
         </div>
         <div class="col-lg-4">
-
+            <div>
+                <div class="card-header">Recent Blogs</div>
+                <div class="card body">
+                    @foreach ($blogs as $blog)
+                        <div class="row border">
+                            <div class="col-lg-2">
+                                <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="50px">
+                            </div>
+                            <div class="col-lg-10">
+                                <h5>{{ $blog->title }}</h5>
+                                <em>{{ $blog->category->name }}</em>
+                                <p>{{ Str::limit($blog->description, 50) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 @stop

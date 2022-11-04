@@ -94,10 +94,12 @@ class FrontController extends Controller
         $jobs = Job::latest()->limit(5)->isActive()->get();
         $detail = Blog::where('slug', $slug)->first();
         $relatedBlogs = Blog::where('category_id', $detail->category_id)->isActive()->get();
+        $blogs = Blog::isActive()->limit(5)->get();
         return view('blog.fdetail', [
             'detail'    =>  $detail,
             'relatedBlogs'   =>  $relatedBlogs,
-            'jobs' =>  $jobs
+            'jobs' =>  $jobs,
+            'blogs' => $blogs
         ]);
     }
 
