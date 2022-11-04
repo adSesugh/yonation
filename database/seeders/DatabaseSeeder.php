@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             DomainTableSeeder::class,
-            DegreeTableSeeder::class,
-            ClearJobTableSeeder::class
+            //DegreeTableSeeder::class,
+            //ClearJobTableSeeder::class
         ]); 
     }
 }
