@@ -14,7 +14,7 @@
                 <div class="col-lg-6">
                     {{ $detail->category->name }}
                 </div>
-                <div class="col-lg-6 text-right">
+                <div class="col-lg-6" style="align-items: flex-end; text-align:right;">
                     {{ \Carbon\Carbon::parse($detail->created_at)->format('F j, Y') }}
                 </div>
             </div>
