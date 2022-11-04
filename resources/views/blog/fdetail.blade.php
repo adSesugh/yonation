@@ -12,10 +12,10 @@
             <img width="100%" src="{{ $detail->media[0]->original_url }}" alt="{{ Str::lower($detail->title) }}">
             <div class="row my-2">
                 <div class="col-lg-6">
-                    {{ $detail->category->name }}
+                    <span>Category: &nbsp;</span>{{ $detail->category->name }}
                 </div>
-                <div class="col-lg-6" style="align-items: flex-end; text-align:right;">
-                    {{ \Carbon\Carbon::parse($detail->created_at)->format('F j, Y') }}
+                <div class="col-lg-6" style="align-items: flex-end; text-align:right;font-size:10px;">
+                    <span>Post Date: &nbsp;</span>{{ \Carbon\Carbon::parse($detail->created_at)->format('F j, Y') }}
                 </div>
             </div>
             <p>{{ $detail->description }}</p>
