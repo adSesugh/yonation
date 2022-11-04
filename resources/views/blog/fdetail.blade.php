@@ -18,7 +18,7 @@
                     <span>Post Date: &nbsp;</span>{{ \Carbon\Carbon::parse($detail->created_at)->format('F j, Y') }}
                 </div>
             </div>
-            <p>{{ $detail->description }}</p>
+            <p style="border: 2px; border-radius: 20px;">{{ $detail->description }}</p>
         </div>
         <div class="col-lg-4">
 
