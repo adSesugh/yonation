@@ -28,7 +28,7 @@
                         <div class="col-lg-12 border-bottom">
                             <div class="row no-gutters">
                                 <div class="col-lg-2">
-                                    <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="80px">
+                                    <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="80px" width="80px">
                                 </div>
                                 <div class="col-lg-8">
                                     <h6>{{ $blog->title }}</h6>
