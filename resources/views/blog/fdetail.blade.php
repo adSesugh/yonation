@@ -26,7 +26,7 @@
                 <div class="card body">
                     @foreach ($blogs as $blog)
                         <div class="col-lg-12 border-bottom">
-                            <div class="row no-gutters">
+                            <div class="row no-gutters" style="height: 60px;">
                                 <div class="col-lg-2">
                                     <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="60px" width="60px">
                                 </div>
