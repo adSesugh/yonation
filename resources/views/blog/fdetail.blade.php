@@ -28,9 +28,9 @@
                         <div class="col-lg-12 border-bottom">
                             <div class="row no-gutters">
                                 <div class="col-lg-2">
-                                    <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="80px" width="80px">
+                                    <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="60px" width="60px">
                                 </div>
-                                <div class="col-lg-8 ml-4">
+                                <div class="col-lg-8 pl-4">
                                     <h6>{{ $blog->title }}</h6>
                                     <p>{{ Str::limit($blog->description, 20) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
                                 </div>
