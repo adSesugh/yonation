@@ -33,7 +33,7 @@
                                 <div class="col-lg-8 pl-4">
                                     <div class="col-lg-12">
                                         <span style="font-size: 15px; font-weight: 700">{{ $blog->title }}</span><br>
-                                        <span style="font-size: 14px;">{{ Str::limit($blog->description, 50) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></span>
+                                        <span style="font-size: 14px;">{{ Str::limit($blog->description, 30) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></span>
                                     </div>
                                 </div>
                             </div>
