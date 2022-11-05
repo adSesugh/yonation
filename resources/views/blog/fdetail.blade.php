@@ -31,9 +31,9 @@
                                     <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="60px" width="60px">
                                 </div>
                                 <div class="col-lg-8 pl-4">
-                                    <div class="row">
-                                        <h6>{{ $blog->title }}</h6>
-                                        <p style="font-size: 12px;">{{ Str::limit($blog->description, 50) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
+                                    <div class="col-lg-12">
+                                        <h6 style="font-size: 16px;">{{ $blog->title }}</h6>
+                                        <p style="font-size: 14px;">{{ Str::limit($blog->description, 50) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
                                     </div>
                                 </div>
                             </div>
