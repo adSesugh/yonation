@@ -33,7 +33,7 @@
                                 <div class="col-lg-8 pl-4">
                                     <div class="row">
                                         <h6>{{ $blog->title }}</h6>
-                                        <p>{{ Str::limit($blog->description, 20) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
+                                        <p style="font-size: 12px;">{{ Str::limit($blog->description, 20) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></p>
                                     </div>
                                 </div>
                             </div>
