@@ -31,10 +31,10 @@
                                     <img src="{{ $blog->media[0]->original_url }}" alt="{{ $blog->title }}" height="60px" width="60px">
                                 </div>
                                 <div class="col-lg-8 pl-4">
-                                    <div class="col-lg-12">
+                                    <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">
                                         <span style="font-size: 15px; font-weight: 700">{{ $blog->title }}</span><br>
-                                        <span style="font-size: 14px;">{{ Str::limit($blog->description, 30) }} <a style="text-decoration: black" href="{{ route('blog.detail', $blog->slug) }}">Read me...</a></span>
-                                    </div>
+                                        <span style="font-size: 14px;">{{ Str::limit($blog->description, 30) }}</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
