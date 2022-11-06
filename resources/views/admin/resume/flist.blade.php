@@ -13,6 +13,7 @@
                         <th class="align-middle">Email Address</th>
                         <th class="align-middle">Qualification</th>
                         <th class="align-middle">Job Function</th>
+                        <th class="align-middle">Status</th>
                     </tr>
                 </thead>
             </table>
@@ -74,6 +75,14 @@
                     {data: 'email', name: 'email'},
                     {data: 'degree.name', name: 'degree.name'},
                     {data: 'domain.name', name: 'domain.name'},
+                    {data: 'treated', 'render': function(data, type, row, meta){
+                        if(data){
+                            return `<span class="badge badge-success">${'Treated'}</span>`
+                        }
+                        else {
+                            return `<span class="badge badge-primary">${'Pending'}</span>`
+                        }
+                    }}
                 ]
             });
         });

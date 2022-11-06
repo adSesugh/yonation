@@ -24,6 +24,16 @@ if (!function_exists('getBlogs')) {
     }
 }
 
+if (!function_exists('checkBox')) {
+  
+    function checkBox($val)
+    {
+        if($val === 'on'){
+            return true;
+        }
+    }
+}
+
 function translateText($text)
 {
     try {

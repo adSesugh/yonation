@@ -48,4 +48,19 @@ class ResumeController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(Request $request, $resumeId)
+    {
+        $request->validate([
+            'comment'   =>  ['required']
+        ]);
+        
+        $resume = Resume::findOrFail($resumeId);
+        $resume->update([
+            'comment'   =>  $request->comment,
+            'treated'   =>  $request->has('treated') ? checkBox($request->treated) : $resume->treated
+        ]);
+
+        return redirect()->back();
+    }
 }

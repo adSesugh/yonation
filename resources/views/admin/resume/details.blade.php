@@ -5,7 +5,18 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h5>{{ $resume->fullname }} - Information</h5>
+            <div class="row">
+                <div class="col-lg-10">
+                    <h5>{{ $resume->fullname }} - Information</h5>
+                </div>
+                <div class="col-lg-2 text-right">
+                    @if($resume->treated)
+                        <span class="badge badge-success px-2">Treated</span>
+                    @else
+                        <span class="badge badge-primary px-2">Pending</span>
+                    @endif
+                </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="row no-gutters">
@@ -184,6 +195,20 @@
                                 </div>
                             </div>
                         @endif
+                    </div>
+                    <div class="row m-2 p-4 border">
+                        {!! Form::model($resume, ['method' => 'PATCH', 'class' => 'col-lg-12', 'route' => ['resumes.update', $resume->id]]) !!}
+                            @csrf
+                            <div class="mb-3">
+                                <label for="comment" class="form-label">Comment</label>
+                                {!! Form::textarea('comment', null, ['rows' => 5, 'class' => 'form-control']) !!}
+                            </div>
+                            <div class="mb-3">
+                                <label for="treated" class="form-label">Treated? </label>
+                                {!! Form::checkbox('treated', null, ['class' => 'form-control']) !!}
+                            </div>
+                            {!! Form::submit() !!}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
