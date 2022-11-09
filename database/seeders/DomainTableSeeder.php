@@ -50,6 +50,7 @@ class DomainTableSeeder extends Seeder
         $newData = [
             'Accounting',
             'Aerospace',
+            'Airforce',
             'Agriculture',
             'Anthropology',
             'Architecture',
@@ -69,7 +70,7 @@ class DomainTableSeeder extends Seeder
             'Custom',
             'Drama',
             'Economics',
-            'Education',
+            'Education/Teacher',
             'Electrical Engineering',
             'English',
             'Film',
@@ -84,6 +85,7 @@ class DomainTableSeeder extends Seeder
             'Information Technology',
             'Interior Design',
             'International Relations',
+            'Interpreter',
             'Immigration',
             'Journalism',
             'Management Information System',
@@ -104,6 +106,7 @@ class DomainTableSeeder extends Seeder
             'Religion',
             'Sociology',
             'Spanish',
+            'Student/Scholarship',
             'Other'
         ];
 
