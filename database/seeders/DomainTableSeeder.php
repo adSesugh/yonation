@@ -109,7 +109,6 @@ class DomainTableSeeder extends Seeder
             'Student/Scholarship',
             "Legal Practice",
             "Transaction Negotiation",
-            "Chemical Engineering",
             "Food Engineering",
             "Town Planning",
             'Other'
