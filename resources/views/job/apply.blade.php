@@ -19,6 +19,8 @@
                     <div class="p-5">
                         <div class="text-center">
                             <h1 class="h4 text-gray-900">Fill your Information!</h1>
+                            <hr />
+                            <small style="margin: 2px;">"Maximum photo size to upload is 2MB (2048 KB). If you are uploading a photo, try to reduce its resolution to make it under 2MB"</small>
                             <!-- Circles which indicates the steps of the form: -->
                             <div class="mb-4" style="text-align:center;margin-top:2px;">
                                 <span class="step"></span>

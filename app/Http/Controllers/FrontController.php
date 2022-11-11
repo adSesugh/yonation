@@ -111,7 +111,7 @@ class FrontController extends Controller
     public function jobApply()
     {
         $degrees = Degree::pluck('name', 'id')->all();
-        $domains = Domain::pluck('name', 'id')->all();
+        $domains = Domain::orderBy('name', 'asc')->pluck('name', 'id')->all();
         $genders = [
             'Male' => 'Male',
             'Female' =>  'Female'

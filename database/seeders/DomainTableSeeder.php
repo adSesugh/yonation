@@ -107,6 +107,11 @@ class DomainTableSeeder extends Seeder
             'Sociology',
             'Spanish',
             'Student/Scholarship',
+            "Legal Practice",
+            "Transaction Negotiation",
+            "Chemical Engineering",
+            "Food Engineering",
+            "Town Planning",
             'Other'
         ];
 

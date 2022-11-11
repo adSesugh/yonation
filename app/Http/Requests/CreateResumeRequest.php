@@ -36,7 +36,7 @@ class CreateResumeRequest extends FormRequest
             'year_to'   =>  ['required'],
             'course'    =>  ['required'],
             'school_name'   =>  ['required'],
-            'photo' =>  ['required'],
+            'photo' =>  ['required', 'file', 'max:2048'],
             'resumecv'  => ['required'],
             'terms' =>  ['required'],
             'father'    =>  ['required'],
@@ -63,7 +63,8 @@ class CreateResumeRequest extends FormRequest
             'fcity.required'    =>  'Provide Father\'s City',
             'fstate.required'   =>  'Provide Father\'s State',
             'mcity.required'    =>  'Provide Mother\'s City',
-            'mstate.required'   =>  'Provide Mother\'s State'
+            'mstate.required'   =>  'Provide Mother\'s State',
+            'photo.max' => 'Maximum file size to upload is 2MB (2048 KB).'
         ];
     }
 }
