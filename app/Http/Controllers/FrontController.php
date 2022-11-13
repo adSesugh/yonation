@@ -222,6 +222,10 @@ class FrontController extends Controller
                     'email' => $resumey->email,
                     'password' => $password,
                 ]);
+
+                if($user){
+                    $user->assignRole('User');
+                }
             }
         });
         
