@@ -13,9 +13,11 @@ use App\Models\Gallery;
 use App\Models\Job;
 use App\Models\Message;
 use App\Models\Resume;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 //use BayAreaWebPro\MultiStepForms\MultiStepForm;
@@ -211,6 +213,15 @@ class FrontController extends Controller
                 $resumey->addMedia(storage_path('app/public/'.$photoPath))->toMediaCollection();
                 $resumey->addMedia(storage_path('app/public/'.$resumePath))->toMediaCollection();
                 //$resumey->media;
+
+                $emailSplit = Str::of($resumey->email)->explode('@');
+                $password = Hash::make($emailSplit[0]);
+
+                $user = User::create([
+                    'name' => $resumey->fullname,
+                    'email' => $resumey->email,
+                    'password' => $password,
+                ]);
             }
         });
         
