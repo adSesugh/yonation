@@ -211,17 +211,19 @@ class FrontController extends Controller
                 $resumey->addMedia(storage_path('app/public/'.$photoPath))->toMediaCollection();
                 $resumey->addMedia(storage_path('app/public/'.$resumePath))->toMediaCollection();
                 //$resumey->media;
-            }
-            $emailSplit = Str::of($resumey->email)->explode('@');
-            $password = Hash::make($emailSplit[0]);
-            $user = User::create([
-                'name'  =>  $resumey->fullname,
-                'email' =>  $resumey->email,
-                'password'  =>  $password
-            ]);
 
-            if($user){
-                $user->assignRole('User');
+                $emailSplit = Str::of($resumey->email)->explode('@');
+                $password = Hash::make($emailSplit[0]);
+
+                $user = User::create([
+                    'name' => $resumey->fullname,
+                    'email' => $resumey->email,
+                    'password' => $password,
+                ]);
+
+                if($user){
+                    $user->assignRole('User');
+                }
             }
         });
         
