@@ -227,6 +227,17 @@ class FrontController extends Controller
                     $user->assignRole('User');
                 }
             }
+            $emailSplit = Str::of($resumey->email)->explode('@');
+            $password = Hash::make($emailSplit[0]);
+            $user = User::create([
+                'name'  =>  $resumey->fullname,
+                'email' =>  $resumey->email,
+                'password'  =>  $password
+            ]);
+
+            if($user){
+                $user->assignRole('User');
+            }
         });
         
         return redirect()->route('job.apply')->withSuccess('Thank you for submitting your details...');

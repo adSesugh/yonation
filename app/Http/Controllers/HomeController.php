@@ -38,4 +38,10 @@ class HomeController extends Controller
             'recentResumes' =>  $recentResumes
         ]);
     }
+
+    public function userDashboard()
+    {      
+        $user = auth()->user();
+        return view('user.details')->with(['user' => $user]);
+    }
 }
