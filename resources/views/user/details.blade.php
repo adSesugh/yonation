@@ -215,20 +215,6 @@
                             </div>
                         @endif
                     </div>
-                    <div class="row m-2 p-4 border">
-                        {!! Form::model($user, ['method' => 'PATCH', 'class' => 'col-lg-12', 'route' => ['users.update', $user->id]]) !!}
-                            @csrf
-                            <div class="mb-3">
-                                <label for="comment" class="form-label">Comment</label>
-                                {!! Form::textarea('comment', null, ['rows' => 5, 'class' => 'form-control', 'readonly' => true]) !!}
-                            </div>
-                            {{-- <div class="mb-3">
-                                <label for="treated" class="form-label">Treated? </label>
-                                {!! Form::checkbox('treated', null, ['class' => 'form-control']) !!}
-                            </div> --}}
-                            {{-- {!! Form::submit() !!} --}}
-                        {!! Form::close() !!}
-                    </div>
                 </div>
             </div>
         </div>
