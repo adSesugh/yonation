@@ -8,6 +8,7 @@ use App\Models\Job;
 use App\Models\Resume;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
@@ -74,16 +75,25 @@ class HomeController extends Controller
         $resumePath = null;
 
         $resume = Resume::findOrFail($resumeId);
+        $resume->domain_id = $request->domain_id;
+        $resume->save();
+
         foreach ($resume->media as $key => $media) {
             
             $fileType = $media->getTypeFromExtension();
             
             if($request->has('photo') && $fileType === 'image'){
                 $media->delete();
+                
+                $m = DB::table('media')->where('name', $media->name)->first();
+                Log::info($m);
+                $m->delete();
+                
             }
-
-            if($request->has('resumecv') && $fileType === 'other'){
+            elseif($request->has('resumecv')){
                 $media->delete();
+                $m = DB::table('media')->where('name', $media->name)->first();
+                $m->delete();
             }
         } 
 

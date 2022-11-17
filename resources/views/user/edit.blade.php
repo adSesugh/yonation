@@ -3,6 +3,20 @@
 @section('title') User Detail @endsection
 
 @section('content')
+    @php
+        foreach ($user->media as $key => $media) {
+            $mediaType = $media->getTypeFromExtension();
+            
+            if($mediaType === 'image'){
+                $imageSrc = $user->media[$key]->original_url;
+                //continue;
+            }
+            elseif($mediaType === 'pdf') {
+                $resumeSrc = $user->media[$key]->original_url;
+                $flag = true;
+            }
+        }                           
+    @endphp
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -26,7 +40,7 @@
                         <div class="row">
                             @if(count($user->media) > 0)
                                 <div class="col-lg-12 text-justify-center text-center">
-                                    <img class="img-rounded" src="{{ $user->media[0]->original_url }}" style="height: 150px;" alt="{{ $user->fullname }}">
+                                    <img class="img-rounded" src="{{ $imageSrc }}" style="height: 150px;" alt="{{ $user->fullname }}">
                                 </div>
                             @else
                                 <div class="col-lg-12 text-justify-center text-center">
@@ -207,7 +221,7 @@
                                         <div class="card-body" >
                                             <input type="file" name="resumecv" accept=".pdf" onchange="loadResume(event)" />
                                             <div>
-                                                <iframe id="routput" style="width:100%; height:600px;" frameborder="0"></iframe>
+                                                <iframe id="routput" src="https://docs.google.com/gview?url={{ $resumeSrc }}&embedded=true" style="width:100%; height:600px;" frameborder="0"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -239,6 +253,7 @@
             var routput = document.getElementById('routput');
             routput.src = URL.createObjectURL(event.target.files[0]);
             routput.onload = function() {
+                
                 URL.revokeObjectURL(`https://docs.google.com/gview?url=${routput.src}&embedded=true`) // free memory
             }
         };
