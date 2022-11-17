@@ -29,7 +29,10 @@
                 </li>
             </ul>
             <!--end navbar nav-->
-            <div class="login-btn ms-lg-4 mt-2 mt-lg-0">
+            <div class="login-btn ms-lg-4 mt-lg-0">
+                {{-- <a href="{{ route('login') }}" class="btn btn-primary rounded-pill btn-sm">
+                    {{ translateText('Login') }}
+                </a> --}}
                 <a href="{{ route('job.apply') }}" class="btn btn-primary rounded-pill btn-sm">
                     {{ translateText('Register') }}
                 </a>

@@ -7,18 +7,24 @@
     </button>
 
     <!-- Topbar Search -->
-    <form method="POST" action="{{ route('applicant.search') }}" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-        @csrf
-        <div class="input-group">
-            <input type="text" name="q" class="form-control bg-light border-0 small" placeholder="Search for applicant via number..."
-                aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
+    @if(auth()->user()->hasRole('Super Admin'))
+        <form method="POST" action="{{ route('applicant.search') }}" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            @csrf
+            <div class="input-group">
+                <input type="text" name="q" class="form-control bg-light border-0 small" placeholder="Search for applicant via number..."
+                    aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    @else
+        <a href="{{ route('index') }}">
+            <i class="fa fa-home"></i>
+        </a>
+    @endif
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">

@@ -226,7 +226,7 @@
                                     </div>
                                     <div class="col-sm-6 align-middle">
                                         <label for="resume">Resume/CV upload</label>
-                                        <input accept=".doc,.pdf,.docx" type="file" class="form-control @error('resumecv') is-invalid @enderror" name="resumecv" id="resumecv" placeholder="Resume CV upload" {{ old('resumecv') }}>
+                                        <input accept=".pdf" type="file" class="form-control @error('resumecv') is-invalid @enderror" name="resumecv" id="resumecv" placeholder="Resume CV upload" {{ old('resumecv') }}>
                                         @error('resumecv')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

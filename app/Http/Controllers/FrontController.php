@@ -14,6 +14,7 @@ use App\Models\Job;
 use App\Models\Message;
 use App\Models\Resume;
 use App\Models\User;
+use App\Notifications\WelcomeMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
@@ -225,6 +226,7 @@ class FrontController extends Controller
 
                 if($user){
                     $user->assignRole('User');
+                    $user->notify(new WelcomeMail());
                 }
             }
         });

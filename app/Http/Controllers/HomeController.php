@@ -6,6 +6,9 @@ use App\Http\Resources\ApplicationCardResource;
 use App\Models\Job;
 use App\Models\Resume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -26,6 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(auth()->user()->hasRole('User')){
+            return redirect()->route('user.dashboard');
+        }
+        
         $jobs = Job::orderBy('created_at', 'desc')->latest()->limit(5)->with(['domain'])->get();
         $recentResumes = Resume::orderBy('created_at', 'desc')->with(['domain'])->latest()->limit(5)->get();
        
@@ -40,8 +47,60 @@ class HomeController extends Controller
     }
 
     public function userDashboard()
-    {      
-        $user = auth()->user();
-        return view('user.details')->with(['user' => $user]);
+    {   
+        if(auth()->user()->hasRole('User')){
+            $user =  Resume::with(['media', 'domain', 'degree', 'job'])->where('email', auth()->user()->email)->first();
+            return view('user.details')->with(['user' => $user]);
+        }
+
+        return Auth::logout();
+    }
+
+    public function userDashboardEdit()
+    {   
+        if(auth()->user()->hasRole('User')){
+            $user =  Resume::with(['media', 'domain', 'degree', 'job'])->where('email', auth()->user()->email)->first();
+            return view('user.edit')->with(['user' => $user]);
+        }
+
+        return Auth::logout();
+    }
+
+    public function userDashboardPost(Request $request, $resumeId)
+    {
+        $photoPath = null;
+        $resumePath = null;
+
+        $resume = Resume::findOrFail($resumeId);
+        foreach ($resume->media as $key => $media) {
+            
+            $fileType = $media->getTypeFromExtension();
+            
+            if($request->has('photo') && $fileType === 'image'){
+                $media->delete();
+            }
+
+            if($request->has('resumecv') && $fileType === 'other'){
+                $media->delete();
+            }
+        } 
+
+        if($request->has('photo') && $request->file('photo')){
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $photoName = Str::slug($resume->fullname.' Passport').'.'.$extension;
+            $photoPath = $request->file('photo')->storeAs('media', $photoName, 'public');
+
+            $resume->addMedia(storage_path('app/public/'.$photoPath))->toMediaCollection();
+        }
+
+        if($request->has('resumecv') && $request->file('resumecv')){
+            $rextension = $request->file('resumecv')->getClientOriginalExtension();
+            $resumeName = Str::slug($resume->fullname.' CV').'.'.$rextension;
+            $resumePath = $request->file('resumecv')->storeAs('media', $resumeName, 'public');
+        
+            $resume->addMedia(storage_path('app/public/'.$resumePath))->toMediaCollection();
+        }
+
+        return redirect()->route('user.dashboard');
     }
 }
