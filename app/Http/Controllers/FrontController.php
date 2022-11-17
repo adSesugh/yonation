@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateResumeRequest;
 use App\Http\Requests\PostMessageRequest;
+use App\Mail\EnquiryMail;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 //use BayAreaWebPro\MultiStepForms\MultiStepForm;
 
@@ -237,13 +239,19 @@ class FrontController extends Controller
     public function postMessage(PostMessageRequest $request)
     {
         try {
-            Message::create([
-                'name'  =>  $request->name,
-                'email' =>  $request->email,
-                'subject'   => $request->subject,
-                'number'    =>  $request->number,
-                'note'      => $request->note
-            ]);
+            DB::transaction(function() use ($request) {
+                $msg = Message::create([
+                        'name'  =>  $request->name,
+                        'email' =>  $request->email,
+                        'subject'   => $request->subject,
+                        'number'    =>  $request->number,
+                        'note'      => $request->note
+                    ]);
+                if($msg){
+                    Mail::to(env("MAIL_FROM_ADDRESS", 'info@iretiodoyoruba.org'))
+                        ->send(new EnquiryMail($msg));
+                }
+            });
 
             return redirect()->route('index');
 
