@@ -21,7 +21,7 @@
             </div>
         </form>
     @else
-        <a href="{{ route('index') }}">
+        <a href="{{ url('/') }}">
             <i class="fa fa-home"></i>
         </a>
     @endif

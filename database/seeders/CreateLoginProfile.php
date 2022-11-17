@@ -19,7 +19,7 @@ class CreateLoginProfile extends Seeder
      */
     public function run()
     {
-        foreach (Resume::whereId(1)->get() as $key => $resume) {
+        foreach (Resume::get() as $key => $resume) {
             $findPass = Str::of($resume->email)->explode('@');
 
             if(!User::where('email', $resume->email)->exists()){
