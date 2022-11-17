@@ -247,10 +247,10 @@ class FrontController extends Controller
                         'number'    =>  $request->number,
                         'note'      => $request->note
                     ]);
-                if($msg){
-                    Mail::to(env("MAIL_FROM_ADDRESS", 'info@iretiodoyoruba.org'))
-                        ->send(new EnquiryMail($msg));
-                }
+                // if($msg){
+                //     Mail::to(env("MAIL_FROM_ADDRESS", 'info@iretiodoyoruba.org'))
+                //         ->send(new EnquiryMail($msg));
+                // }
             });
 
             return redirect()->route('index');

@@ -48,8 +48,8 @@ class WelcomeMail extends Notification
                 ->subject('Welcome to Yoruba Nation')
                     ->line('Hello '.$notifiable->name.'!')
                     ->line('Kindly find below your user login details should in case you need to change your passport photograph or Resume/CV.')
-                    ->line('<strong>Username/Email:</strong> '.$notifiable->email)
-                    ->line('<strong>Password: </strong>'. $findPass[0])
+                    ->line('Username/Email: '.$notifiable->email)
+                    ->line('Password:'. $findPass[0])
                     ->action('Click here to login', url('/login'))
                     ->line('Thank you for join this great nation!');
 

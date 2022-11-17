@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ApplicationCardResource;
+use App\Models\Domain;
 use App\Models\Job;
 use App\Models\Resume;
 use Illuminate\Http\Request;
@@ -60,7 +61,8 @@ class HomeController extends Controller
     {   
         if(auth()->user()->hasRole('User')){
             $user =  Resume::with(['media', 'domain', 'degree', 'job'])->where('email', auth()->user()->email)->first();
-            return view('user.edit')->with(['user' => $user]);
+            $domains = Domain::orderBy('name', 'asc')->pluck('name', 'id')->all();
+            return view('user.edit')->with(['user' => $user, 'domains' => $domains]);
         }
 
         return Auth::logout();
