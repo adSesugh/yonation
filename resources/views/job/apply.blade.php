@@ -225,7 +225,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-6 align-middle">
-                                        <label for="resume">Resume/CV upload</label>
+                                        <label for="resume">Resume/CV upload < 2MB (Only pdf file allowed)</label>
                                         <input accept=".pdf" type="file" class="form-control @error('resumecv') is-invalid @enderror" name="resumecv" id="resumecv" placeholder="Resume CV upload" {{ old('resumecv') }}>
                                         @error('resumecv')
                                             <span class="invalid-feedback" role="alert">

@@ -203,7 +203,7 @@
                                 </div>
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <label for="comment" class="form-label">Resume/CV with < 2MB</label>
+                                        <label for="comment" class="form-label">Resume/CV with < 2MB (Only pdf file allowed)</label>
                                         <div class="card-body" >
                                             <input type="file" name="resumecv" accept=".pdf" onchange="loadResume(event)" />
                                             <div>
