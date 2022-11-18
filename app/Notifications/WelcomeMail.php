@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
-class WelcomeMail extends Notification
+class WelcomeMail extends Notification implements ShouldQueue
 {
     use Queueable;
 

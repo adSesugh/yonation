@@ -33,6 +33,11 @@
                                 @if(Session::has('success'))
                                     <p class="alert alert-info">{{ Session::get('success') }}</p>
                                 @endif
+                                @if(Session::has('error'))
+                                    <div class="alert alert-danger">
+                                        <span style="color: red; font-size:10px;">Whoop! something went wrong. Please confirm your information</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                         {!! Form::open(['class' => 'user', 'route' => 'job.applyStore', 'enctype' => 'multipart/form-data', 'method' => 'POST', 'id' => 'regForm']) !!}
