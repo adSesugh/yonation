@@ -4,6 +4,9 @@
 
 @section('content')
     @php
+        $imageSrc = null;
+        $resumeSrc = null;
+        
         foreach ($user->media as $key => $media) {
             $mediaType = $media->getTypeFromExtension();
             

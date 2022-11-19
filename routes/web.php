@@ -5,6 +5,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContractorController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\SettingsController;
@@ -56,6 +57,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/settings', [SettingsController::class, 'store'])->name('settings.store');
     Route::resource('/users', UserController::class);
     Route::resource('/messages', MessageController::class);
+
+    Route::get('contractors', [ContractorController::class, 'index'])->name('contractors.index');
 });
 
 Route::match(['get', 'post'], 'register', function(){
