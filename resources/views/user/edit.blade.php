@@ -11,7 +11,7 @@
                 $imageSrc = $user->media[$key]->original_url;
                 //continue;
             }
-            if($mediaType === 'pdf') {
+            elseif($mediaType === 'pdf' || $mediaType === 'other') {
                 $resumeSrc = $user->media[$key]->original_url;
                 $flag = true;
             }
