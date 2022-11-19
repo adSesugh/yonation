@@ -9,12 +9,12 @@
 
         foreach ($user->media as $key => $media) {
             $mediaType = $media->getTypeFromExtension();
-
+            Log::info($mediaType);
             if($mediaType === 'image'){
                 $imageSrc = $user->media[$key]->original_url;
                 //continue;
             }
-            elseif($mediaType === 'pdf') {
+            if($mediaType === 'pdf') {
                 $resumeSrc = $user->media[$key]->original_url;
             }
         }

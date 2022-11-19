@@ -6,16 +6,16 @@
     @php
         foreach ($user->media as $key => $media) {
             $mediaType = $media->getTypeFromExtension();
-            
+
             if($mediaType === 'image'){
                 $imageSrc = $user->media[$key]->original_url;
                 //continue;
             }
-            elseif($mediaType === 'pdf') {
+            if($mediaType === 'pdf') {
                 $resumeSrc = $user->media[$key]->original_url;
                 $flag = true;
             }
-        }                           
+        }
     @endphp
     <div class="card">
         <div class="card-header">
@@ -253,7 +253,7 @@
             var routput = document.getElementById('routput');
             routput.src = URL.createObjectURL(event.target.files[0]);
             routput.onload = function() {
-                
+
                 URL.revokeObjectURL(`https://docs.google.com/gview?url=${routput.src}&embedded=true`) // free memory
             }
         };
