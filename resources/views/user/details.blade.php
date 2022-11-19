@@ -6,10 +6,10 @@
     @php
         $imageSrc = null;
         $resumeSrc = null;
-        
+
         foreach ($user->media as $key => $media) {
             $mediaType = $media->getTypeFromExtension();
-            
+
             if($mediaType === 'image'){
                 $imageSrc = $user->media[$key]->original_url;
                 //continue;
@@ -17,8 +17,10 @@
             elseif($mediaType === 'pdf') {
                 $resumeSrc = $user->media[$key]->original_url;
             }
-        }                           
+        }
     @endphp
+    {{ Log::alert($resumeSrc); }}
+    {{ Log::alert($imageSrc) }}
     <div class="card">
         <div class="card-header">
             <div class="row">
@@ -26,7 +28,7 @@
                     <h5>
                         {{ $user->fullname }} - Information
                         <span>
-                            &nbsp; 
+                            &nbsp;
                             <a href="{{ route('user.dashboard.edit') }}" class="badge badge-warning">Click here to pdate photo and CV</a>
                         </span>
                     </h5>
