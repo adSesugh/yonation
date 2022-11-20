@@ -18,8 +18,7 @@
             }
         }
     @endphp
-    {{ Log::alert($resumeSrc); }}
-    {{ Log::alert($imageSrc) }}
+
     <div class="card">
         <div class="card-header">
             <div class="row">
