@@ -27,7 +27,7 @@
                         {{ $user->fullname }} - Information
                         <span>
                             &nbsp;
-                            <a href="{{ route('user.dashboard.edit') }}" class="badge badge-warning">Click here to pdate photo and CV</a>
+                            <a href="{{ route('user.dashboard.edit') }}" class="badge badge-warning">Click here to update photo and CV</a>
                         </span>
                     </h5>
                 </div>
