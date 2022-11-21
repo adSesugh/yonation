@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Contractor extends Model
+class Contractor extends Model implements HasMedia
 {
     use HasFactory;
     use Notifiable;
+    use InteractsWithMedia;
 
     const PENDING = 0;
     const REVEIWING = 1;
@@ -28,7 +31,8 @@ class Contractor extends Model
         'registrant_phone',
         'registrant_email',
         'speciality',
-        'status'
+        'status',
+        'slug'
     ];
 
 
