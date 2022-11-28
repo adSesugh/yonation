@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('registrant_email', 70)->unique()->nullable();
             $table->json('speciality')->nullable();
             $table->tinyInteger('status');
+            $table->string('slug', 191);
             $table->timestamps();
         });
     }

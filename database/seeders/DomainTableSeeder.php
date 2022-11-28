@@ -17,7 +17,7 @@ class DomainTableSeeder extends Seeder
     public function run()
     {
         Domain::truncate();
-        
+
         $data = [
             'Accounting, Auditing & Finance',
             'Admin & Office',
@@ -45,7 +45,7 @@ class DomainTableSeeder extends Seeder
             'Software & Data',
             'Supply Chain & Procurement',
             'Trades & Services'
-        ];  
+        ];
 
         $newData = [
             'Accounting',
@@ -111,7 +111,14 @@ class DomainTableSeeder extends Seeder
             "Transaction Negotiation",
             "Food Engineering",
             "Town Planning",
-            'Other'
+            'Other',
+            'Biochemistry',
+            'Microbiology',
+            'Quantity Surveying',
+            'Estate Surveying',
+            'Land Surveying',
+            'Guidance and Counselling',
+            'Driver'
         ];
 
         foreach($newData as $item){

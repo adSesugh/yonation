@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('contractors', [ContractorController::class, 'store'])->name('contractors.store');
+Route::get('contractors/{contractor}', [ContractorController::class, 'cprofile'])->name('cprofile');
+Route::patch('contractors/{contractor', [ContractorController::class, 'update'])->name('contractors.update');

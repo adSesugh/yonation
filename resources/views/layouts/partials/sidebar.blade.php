@@ -54,6 +54,11 @@
             <i class="fas fa-file-alt" aria-hidden="true"></i>
             <span>Resume Pool</span></a>
     </li>
+    <li class="nav-item {{ Request::is('contractors*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('contractors.index') }}">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span>Contractors</span></a>
+    </li>
     <li class="nav-item {{ Request::is('settings*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('settings.index') }}">
             <i class="fa fa-cogs" aria-hidden="true"></i>

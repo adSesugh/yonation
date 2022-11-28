@@ -15,7 +15,7 @@ class ContractorController extends Controller
     public function index()
     {
         $contractors = Contractor::with(['media'])->get();
-        return response()->json($contractors, 200);
+        return view('admin.contractor.index')->with(['contractors' => $contractors]);
     }
 
     /**
@@ -47,7 +47,7 @@ class ContractorController extends Controller
      */
     public function show(Contractor $contractor)
     {
-        //
+        return view('admin.contractor.show')->with(['contractor' => $contractor]);
     }
 
     /**
@@ -81,6 +81,12 @@ class ContractorController extends Controller
      */
     public function destroy(Contractor $contractor)
     {
-        //
+        abort(403);
+    }
+
+    public function cprofile(Contractor $contractor)
+    {
+        $data = $contractor->with(['media']);
+        return response()->json($data, 200);
     }
 }

@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/messages', MessageController::class);
 
     Route::get('contractors', [ContractorController::class, 'index'])->name('contractors.index');
+    Route::get('contractors/{contractor}', [ContractorController::class, 'show'])->name('contractors.show');
 });
 
 Route::match(['get', 'post'], 'register', function(){
