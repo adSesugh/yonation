@@ -27,10 +27,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            //DomainTableSeeder::class,
+            DomainTableSeeder::class,
             //DegreeTableSeeder::class,
             //ClearJobTableSeeder::class,
             CreateLoginProfile::class
-        ]); 
+        ]);
     }
 }
