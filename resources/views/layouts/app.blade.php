@@ -21,7 +21,7 @@
     <!-- Custom fonts for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @stack('css')
-    
+
 </head>
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -50,7 +50,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Yoruba Nation 2022 @if(date('Y') > 2022)- {{ date(Y) }} @endif</span>
+                        <span>Copyright &copy; Yoruba Nation 2022 @if(date('Y') > 2022)- {{ date('Y') }} @endif</span>
                     </div>
                 </div>
             </footer>
