@@ -118,10 +118,18 @@ class DomainTableSeeder extends Seeder
             'Estate Surveying',
             'Land Surveying',
             'Guidance and Counselling',
-            'Driver'
+            'Driver',
         ];
 
-        foreach($newData as $item){
+        $updateDomain = [
+            'Mining Engineering',
+            'Geological Engineering',
+            'Mineral Engineering',
+            'Geology',
+            'Solid Mineral Development',
+        ];
+
+        foreach($updateDomain as $item){
             Domain::create([
                 'name'  =>  $item
             ]);
