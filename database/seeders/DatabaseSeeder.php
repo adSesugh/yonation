@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             DomainTableSeeder::class,
             //DegreeTableSeeder::class,
             //ClearJobTableSeeder::class,
-            CreateLoginProfile::class
+            //CreateLoginProfile::class
         ]);
     }
 }
