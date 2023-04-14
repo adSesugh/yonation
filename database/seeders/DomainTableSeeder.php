@@ -119,6 +119,11 @@ class DomainTableSeeder extends Seeder
             'Land Surveying',
             'Guidance and Counselling',
             'Driver',
+            'Mining Engineering',
+            'Geological Engineering',
+            'Mineral Engineering',
+            'Geology',
+            'Solid Mineral Development',
         ];
 
         $updateDomain = [
@@ -129,7 +134,7 @@ class DomainTableSeeder extends Seeder
             'Solid Mineral Development',
         ];
 
-        foreach($updateDomain as $item){
+        foreach($newData as $item){
             Domain::create([
                 'name'  =>  $item
             ]);
